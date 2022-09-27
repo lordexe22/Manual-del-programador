@@ -1,0 +1,77 @@
+/************************************************************************************************************/
+/* Estilos genéricos */
+/************************************************************************************************************/
+.section-1{
+    width: 80%;
+}
+
+
+
+/************************************************************************************************************/
+/* Estilos de texto para excribir código */
+/************************************************************************************************************/
+/* No aplica tabulación */
+.tab0 { padding-left: 0; }
+/* Aplica 1 tabulación */
+.tab1 { padding-left: 20px; }
+/* Aplica 2 tabulaciones */
+.tab2 { padding-left: 40px; }
+/* Aplica 3 tabulaciones */
+.tab3 { padding-left: 60px; }
+/* Formato general */
+.code-text { color: black; }
+/* Comentarios en el código */
+.comment-text{ color: green; }
+/* Formato para las etiquetas */
+.label-text{ color: blue; }
+/* Caja donde encerrar un código de ejemplo */
+.code-box{
+    background-color: lightgrey;
+    border: thin black solid;
+    width:max-content;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+/************************************************************************************************************/
+/* Estilos de etiquetas */
+/************************************************************************************************************/
+.box-lab{
+    border-radius: 5px;
+    padding: 3px;
+}
+.lightblue-lab { 
+    background-color:lightskyblue;
+    border: 2px lightskyblue solid;
+ }
+ .green-lab { 
+    background-color:greenyellow;
+    border: 2px reenyellow solid;
+ }
+
+/************************************************************************************************************/
+/* Botones de retorno a las distintas páginas */
+/************************************************************************************************************/
+.go-to-index{
+    bottom: 10px;
+    background-color: red;
+    color: white;
+}
+
+.go-to-html{
+    bottom: 40px;
+    background-color:orange;
+    color: white;
+}
+
+.go-to-content{
+    bottom: 70px;
+    background-color:darkgreen;
+    color: white;
+}
+.go-btn{
+    border-radius: 5px;
+    width: 80px;
+    right: 10px;
+    position:fixed;
+}
