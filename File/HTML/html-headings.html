@@ -5,98 +5,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
-    <title>Manual del programador/html/headings</title>
+
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+
+    <title>Manual del programador/html/id</title>
 </head>
 <body>
-    <!--<header></header> PROXIMAMENTE-->    
 
-    <h1 id="0">Headings</h1>
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-html.html"></div> <!--Reciclamos el nav de nav-html.html-->
 
-    <main>
-        <section class="section-1"> <!--Contenido-->
-            <h2>Contenido</h2>
-            <div><a href="#1">Introducción</a></div>
-            <div><a href="#2">¿Por qué usar headings?</a></div>
-            <div><a href="#3">Mejorar el SEO con los heading</a></div>
-            <div><a href="#4">Funcionamiento</a></div>
-            <div><a href="#5">Notas y buenas prácticas</a></div>
-            <div><a href="#6">Ejemplo</a></div>
-            <div><a href="#7">Referencias</a></div>
-            <hr>
-        </section>
-        <section class="section-1"> <!--Introducción-->
-            <h2 id="1">Introducción</h2>
-            <p>Los <b>headings</b> (encabezados) en HTML son etiquetas que representan los títulos o subtítulos que queremos mostrar en nuestra página web.</p>
-            <p>Los headings ayudan tanto a los usuarios como a los motores de búsqueda a leer y comprender los textos que conforman una web. Actúan como indicadores para los lectores y facilitan que la gente entienda de qué se trata una publicación o página.</p>
-            <p>Los headings también definen qué partes de tu contenido son importantes y muestran cómo cada una de ella está interconectada.</p>
-            
-            <hr>        
-        </section>
-        <section class="section-1"> <!--¿Por qué usar headings?-->
-            <h2 id="2">¿Por qué usar headings?</h2>
-            <p>Los headings son indicadores que guían a los lectores a través de un artículo. Una vez tengas listo tu contenido, es importante que te asegures de que tus headings son informativos para el lector.</p>
-            <p>El enfoque principal de los headings debe estar en el contenido, y el propósito principal de los headings debe ser hacer que el texto sea más fácil de leer y entender.</p>
-            
-            <hr>        
-        </section>
-        <section class="section-1"> <!--Mejorar el SEO con los heading-->
-            <h2 id="3">Mejorar el SEO con los headings</h2>
-            <p>Aunque de forma genérica, los headings no son un factor por sí mismo que afecte específicamente al SEO, sí son un componente que, bien trabajado, puede darnos mejores resultados.</p>
-            <p>En los headings, tenemos una oportunidad de palabras claves (o sinónimos) de manera prominente, para que quede realmente claro de qué se trata la página. Pero es importante no exagerar. No debería sentirse antinatural o extraño, y si lo hace, probablemente sea porque se está esforzando demasiado, o sobreoptimizando.</p>
-            <p>Así que con los headings, siempre debes poner al usuario primero. Utilízalos para agregar estructura y señales a su contenido, y para describir de qué trata cada sección.</p>
-            
-            <hr>        
-        </section>
-        <section class="section-1"> <!--Funcionamiento-->
-            <h2 id="4">Funcionamiento</h2>
-            <p>Los headings se pueden definir con las etiquetas desde la &lt;h1&gt; hasta la &lt;h6&gt;. &lt;h1&gt; define el heading más importante, por ejemplo el título principal de la página web, mientras que &lt;h6&gt; define el heading menos importante, podria ser un subtítulo.</p> 
-            
-            <hr>        
-        </section>
-        <section class="section-1"> <!--Notas y buenas prácticas-->
-            <h2 id="5">Notas y buenas prácticas</h2>
-            <ul>
-                <li>Restringir el uso de &lt;h1&gt; una sola ves en la página para el título principal de la misma. Se puede pensar en el &lt;h1&gt; como en el nombre de un libro. En una página de categoría, el &lt;h1&gt; sería el nombre de esa categoría. En una página de producto, debe ser el nombre del producto.</li>
-                <li>A medida que se escribe contenido, se puede usar los títulos &lt;h2&gt; y &lt;h3&gt; para introducir diferentes secciones. Piensa en los títulos &lt;h2&gt; como los capítulos de un libro. Esas secciones individuales también pueden usar headings más específicos (etiquetas &lt;h3&gt;, luego etiquetas &lt;h4&gt;, etc.) para introducir subsecciones.</li>
-                <li>Es raro que la mayoría del contenido sea lo suficientemente «profundo» como para necesitar usar etiquetas H4 y más, a menos que esté escribiendo mucho tiempo o contenido realmente técnico.</li>
-            </ul>
-            
-            <hr>        
-        </section>
-        <section class="section-1"> <!--Ejemplo-->
-            <h2 id="6">Ejemplo</h2>
-            <div class="code-box">
-                &lt;<span class="label-text">h1</span>&gt;Header h1&lt;/<span class="label-text">h1</span>&gt;<br>
-                &lt;<span class="label-text">h2</span>&gt;Header h2&lt;/<span class="label-text">h2</span>&gt;<br>
-                &lt;<span class="label-text">h3</span>&gt;Header h3&lt;/<span class="label-text">h3</span>&gt;<br>
-                &lt;<span class="label-text">h4</span>&gt;Header h4&lt;/<span class="label-text">h4</span>&gt;<br>
-                &lt;<span class="label-text">h5</span>&gt;Header h5&lt;/<span class="label-text">h5</span>&gt;<br>
-                &lt;<span class="label-text">h6</span>&gt;Header h6&lt;/<span class="label-text">h6</span>&gt;
-            </div>
-            <div>
-                <h1>Header 1</h1>
-                <h2>Header 2</h2>
-                <h3>Header 3</h3>
-                <h4>Header 4</h4>
-                <h5>Header 5</h5>
-                <h6>Header 6</h6>
-            </div>
-            
-            <hr>        
-        </section>
-        <section class="section-1"><!--Referencias-->
-            <h2 id="7">Referencias</h2>
-            <cite><a href="https://allthetags.com/" target="_blank">https://allthetags.com/</a></cite> <br>
-            <cite><a href="https://www.w3schools.com/html/html_headings.asp" target="_blank">https://www.w3schools.com/html/html_headings.asp</a></cite><br>
-            
-        </section>
-    </main>
-    
 
-    <!-- Botones de navegación-->
-    <a href="../HTML/index.html"><button class="go-btn go-to-index">Index</button></a>
-    <a href="../HTML/html.html"><button class="go-btn go-to-html">HTML</button></a>
-    <a href="#0"><button class="go-btn go-to-content">Contenido</button></a>
-    
+    <h1 id="titulo">Headings</h1>
+    <hr>
+
+    <div> <!--Contenido-->
+        <h2 id="0">Contenido</h2>
+        <ul>
+            <li><a href="#1">Introducción</a></li>
+            <li><a href="#2">Sintaxis</a></li>
+            <li><a href="#3">Aplicación</a></li>
+            <li><a href="#4">Heading y el SEO</a></li>
+            <li><a href="#5">Ejemplo</a></li>
+        </ul>
+    </div>
+    <hr>
+    <div> <!--Introducción-->
+        <h2 id="1">Introducción</h2>
+        <p>
+            Los Headings son etiquetas que se usan para mostrar títulos o subtítulos en un documento HTML.
+        </p>
+        <hr>
+    </div>
+    <div> <!--Sintaxis-->
+        <h2 id="2">Sintaxis</h2>
+        <p> En orden descendiente, los headings se definen con las etiquetas &lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt; y &lt;h6&gt;; siendo &lt;h1&gt; la cabecera más importante de todas.</p>
+        <hr>
+    </div>
+    <div> <!--Aplicación-->
+        <h2 id="3">Aplicación</h2>
+        <p>Los headings son indicadores que guían a los lectores a través de un artículo. Una vez tengas listo tu contenido, es importante que te asegures de que tus headings son informativos para el lector.
+        El enfoque principal de los headings <strong>debe estar en el contenido</strong>, y el propósito principal de los headings debe ser hacer que el texto sea más fácil de leer y entender.</p>
+        <p>Sin headings, existe el riesgo de que terminemos escribiendo una pieza realmente larga y confusa que es difícil de entender.</p>
+        <p>Pero si estructuramos las cosas de forma lógica utilizando headings, no solo hacemos que sea más fácil de leer, sino que también ayudamos a enfocar nuestra escritura.</p>
+
+        <p>Se listan algunas notas útiles acerca del uso que se le suelen dar a los headings:</p>
+
+        <ul>
+            <li>
+                Se está limitado a usar un encabezado H1 en cada página. El encabezado H1 debe ser el nombre / título de la página o publicación.
+            </li>
+            <li>
+                A medida que se escribe contenido, se usan los títulos H2 y H3 para introducir diferentes secciones. Piensa en los títulos H2 como los capítulos de un libro. Esas secciones individuales también pueden usar headings más específicos (etiquetas H3, luego etiquetas H4, etc.) para introducir subsecciones.
+            </li>
+            <li>
+                Es raro que la mayoría del contenido sea lo suficientemente «profundo» como para necesitar usar etiquetas H4 y más, a menos que esté escribiendo mucho tiempo o contenido realmente técnico.
+            </li>
+        </ul>
+
+        <hr>
+    </div>
+    <div> <!--Heading y el SEO-->
+        <h2 id="4">Heading y el SEO</h2>
+        <p>Aunque de forma genérica, los headings no son un factor por sí mismo que afecte específicamente al SEO, sí son un componente que, bien trabajado, puede darnos mejores resultados.</p>
+        <p>En los headings, tenemos una oportunidad de usar la palabra clave (o sus sinónimos) de manera prominente, para que quede realmente claro de qué se trata la página. Pero es importante no exagerar. No debería sentirse antinatural o extraño, y si lo hace, probablemente sea porque se está esforzando demasiado, o sobreoptimizando.</p>
+        <p>Por lo tanto, con los headings, siempre debes poner al usuario primero. Utilízalos para agregar estructura y señales a su contenido, y para describir de qué trata cada sección.</p>
+        <hr>
+    </div>
+    <div> <!--Ejemplo-->
+        <h2 id="5">Ejemplo</h2>
+        <p>Se realiza un pequeño ejemplo donde se muestran los headings disponibles en HTML.</p>
+        <hr>
+        <div class="code-block">
+            <span>&lt;</span><span class="html-label-text">h1</span>&gt;<span></span><span>Header 1</span><span>&lt;/</span><span class="html-label-text">h1</span>&gt;<span></span><br>
+            <span>&lt;</span><span class="html-label-text">h1</span>&gt;<span></span><span>Header 2</span><span>&lt;/</span><span class="html-label-text">h1</span>&gt;<span></span><br>
+            <span>&lt;</span><span class="html-label-text">h1</span>&gt;<span></span><span>Header 3</span><span>&lt;/</span><span class="html-label-text">h1</span>&gt;<span></span><br>
+            <span>&lt;</span><span class="html-label-text">h1</span>&gt;<span></span><span>Header 4</span><span>&lt;/</span><span class="html-label-text">h1</span>&gt;<span></span><br>
+            <span>&lt;</span><span class="html-label-text">h1</span>&gt;<span></span><span>Header 5</span><span>&lt;/</span><span class="html-label-text">h1</span>&gt;<span></span><br>
+            <span>&lt;</span><span class="html-label-text">h1</span>&gt;<span></span><span>Header 6</span><span>&lt;/</span><span class="html-label-text">h1</span>&gt;<span></span>
+        </div>
+        <h1>Header 1</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <h4>Header 4</h4>
+        <h5>Header 5</h5>
+        <h6>Header 6</h1>
+    </div>
+
+    <script> pulsador(); </script>
+    <script> includeHTML(); </script>
+
+
 </body>
 </html>

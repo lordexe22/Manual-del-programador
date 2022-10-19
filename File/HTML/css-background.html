@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/css-background.css">
+
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+
+
+    <title>Manual del programador/html/id</title>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-css.html"></div> <!--Reciclamos el nav de nav-html.html-->
+
+    <h1 id="titulo">Background</h1>
+    <hr>
+    <div> <!--Contenido-->
+        <h2 id="0">Contenido</h2>
+        <ul>
+            <li><a href="#1">Introducción</a></li>
+            <li><a href="#2">background-color</a></li>
+            <li><a href="#3">background-image</a></li>
+            <li><a href="#4">background-clip</a>
+            <li><a href="#5">background-repeat</a></li>          
+            <li><a href="#6">background-position</a></li>     
+            <li><a href="#7">background-size</a></li>
+            <li><a href="#8">background-attachment</a></li>
+            <li><a href="#9">background-origin</a></li>
+            <li><a href="#10">background-blend-mode</a></li>
+            <li><a href="#11">background</a></li>
+        </ul>
+        <hr>
+    </div>
+    <div> <!--Introducción-->
+        <h2 id="1">Introducción</h2>
+        <p>Los backgrounds (fondos de pantalla) en CSS son propiedades que le agregan al fondo de los elemetos efectos especiales como colores e imagenes. Las propiedades que se verán nos permiten manipular el comportamiento de estas imagenes y entre otras cosas permiten crear, mezclar, posicionar y escalar las imagenes que serán asignadas a los elementos.</p>
+        <hr>
+    </div>
+    <div> <!--background-color-->
+        <h2 id="2">background-color</h2>
+        <p>Permite asignarle un color de fondo a un elemento (ver sección de colores).</p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-color</div>
+            <div class="button-panel">
+                 <button id="item-button-0" class="item-button"><b>background-color</b>: <span class="css-variable-text">darkgreen</span>;</button><br>
+             </div>
+            <div id="view-panel-0" class="view-panel"></div>
+            <div id="description-panel-0" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div>
+    <div> <!--background-image-->
+        <h2 id="3">background-image</h2>
+        <p>Esta propiedad especifica una imagen para que se use como fondo de un elemento. Por defecto, la imagen se repetira hasta que cubra el elemento completamente. La imagen en cuestión puede ser un archivo o podemos generar una imagen a partir de gradientes y otros efectos.</p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-image</div>
+            <div class="button-panel">
+                 <button id="item-button-1" class="item-button"><b>background-image</b>: <span class="css-variable-text">none</span>;</button><br>
+                 <button id="item-button-2" class="item-button"><b>background-image</b>: <span class="css-variable-text">url</span>(image.png);</button><br>
+                 <button id="item-button-3" class="item-button"><b>background-image</b>: <span class="css-variable-text">linear-gradient</span>(red, green, blue);</button><br>
+                 <button id="item-button-4" class="item-button"><b>background-image</b>: <span class="css-variable-text">linear-gradient</span>(20deg, red, green, blue);</button><br>
+                 <button id="item-button-5" class="item-button"><b>background-image</b>: <span class="css-variable-text">linear-gradient</span>(20deg, red 20%, green 60%, blue 20%);</button><br>
+                 <button id="item-button-6" class="item-button"><b>background-image</b>: <span class="css-variable-text">repeating-linear-gradient</span>(20deg, red 0 1%, green 16% 17%, blue 32% 33.3%);</button><br>
+                 <button id="item-button-7" class="item-button"><b>background-image</b>: <span class="css-variable-text">repeating-linear-gradient</span>(20deg, red 0, green 11%, blue 22%, red 33.3%);</button><br>
+                 <button id="item-button-8" class="item-button"><b>background-image</b>: <span class="css-variable-text">radial-gradient</span>(red, green, blue);</button><br>
+                 <button id="item-button-9" class="item-button"><b>background-image</b>: <span class="css-variable-text">radial-gradient</span>(circle, red, green, blue);</button><br>
+                 <button id="item-button-10" class="item-button"><b>background-image</b>: <span class="css-variable-text">radial-gradient</span>(circle closest-side at 80% 20%, red 0, green 50%, blue 100%);</button><br>
+                 <button id="item-button-11" class="item-button"><b>background-image</b>: <span class="css-variable-text">repeating-radial-gradient</span>(circle closest-side at 10% 90%, red, green 60%, blue 120%, red 180%);</button><br>
+                 <button id="item-button-12" class="item-button"><b>background-image</b>: <span class="css-variable-text">conic-gradient</span>(red, green, blue);</button><br>
+                 <button id="item-button-13" class="item-button"><b>background-image</b>: <span class="css-variable-text">conic-gradient</span>(red, green 22%, blue 77%, red);</button><br>
+                 <button id="item-button-14" class="item-button"><b>background-image</b>: <span class="css-variable-text">url</span>(image.png), <span class="css-variable-text">radial-gradient</span>(circle, red, green, blue);</button><br>
+                 <button id="item-button-15" class="item-button"><b>background-image</b>: <span class="css-variable-text">radial-gradient</span>(circle, rgba(255,0,0,0.3), rgba(0,255,0,0.1), rgba(0,0,255,0.3)), <span class="css-variable-text">url</span>(image.png);</button><br>
+             </div>
+            <div id="view-panel-1" class="view-panel"></div>
+            <div id="description-panel-1" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+         <hr>
+    </div>
+    <div> <!--background-clip-->
+        <h2 id="4">background-clip</h2>
+        <p> Especifica si el fondo de un elemento, ya sea color o imagen, se extiende por debajo su borde. <br>
+            Si la imagen o color de fondo no esta definido, esta propiedad solo tendrá un efecto visual cuando el borde tenga regiones transparentes o regiones parcialmente opacas (debido a border-style o border-image); de lo contrario el borde cubre la diferencia.
+        </p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-clip</div>
+            <div class="button-panel">
+                 <button id="item-button-16" class="item-button"><b>background-clip</b>: <span class="css-variable-text">border-box</span>;</button><br>
+                 <button id="item-button-17" class="item-button"><b>background-clip</b>: <span class="css-variable-text">padding-box</span>;</button><br>
+                 <button id="item-button-18" class="item-button"><b>background-clip</b>: <span class="css-variable-text">content-box</span>;</button><br>
+             </div>
+            <div id="view-panel-2" class="view-panel"></div>
+            <div id="description-panel-2" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div>
+    <div> <!--background-repeat-->
+        <h2 id="5">background-repeat</h2>
+        <p> Esta propiedad define como se repite el fondo asignado al elemento. Un fondo de imagen puede ser repetido sobre el eje horizontal, el eje vertical, ambos ejes, o no estar repetido.
+        </p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-repeat</div>
+            <div class="button-panel">
+                 <button id="item-button-19" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">repeat</span>;</button><br>
+                 <button id="item-button-20" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">repeat-x</span>;</button><br>
+                 <button id="item-button-21" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">repeat-y</span>;</button><br>
+                 <button id="item-button-22" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">space</span>; <span class="css-comment-text">/*Ejemplo 1*/</span></button><br>
+                 <button id="item-button-23" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">space</span>; <span class="css-comment-text">/*Ejemplo 2*/</span></button><br>
+                 <button id="item-button-24" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">space</span>; <span class="css-comment-text">/*Ejemplo 3*/</span></button><br>
+                 <button id="item-button-25" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">round</span>; <span class="css-comment-text">/*Ejemplo 1*/</span></button><br>                 
+                 <button id="item-button-26" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">round</span>; <span class="css-comment-text">/*Ejemplo 2*/</span></button><br>                   
+                 <button id="item-button-27" class="item-button"><b>background-repeat</b>: <span class="css-variable-text">no-repeat</span>;</button><br> 
+             </div>
+            <div id="view-panel-3" class="view-panel"></div>
+            <div id="description-panel-3" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div>
+    <div> <!--background-position-->
+        <h2 id="6">background-position</h2>
+        <p> Esta propiedad define la posición de la imagen dentro del elemento. Para que su efecto sea apreciable, la imagen debe ser de menor tamaño que el disponible en el elemento y se debe controlar el como se repite la imagen dentro del elemento.</p>
+        <p>NOTA: Todos las imagenes de ejemplo de esta sección tienen la propiedad <b>background-repeat: no-repeat;</b></p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-position</div>
+            <div class="button-panel">
+                 <button id="item-button-28" class="item-button"><b>background-position</b>: <span class="css-variable-text">top</span>;</button><br>
+                 <button id="item-button-29" class="item-button"><b>background-position</b>: <span class="css-variable-text">botton</span>;</button><br>
+                 <button id="item-button-30" class="item-button"><b>background-position</b>: <span class="css-variable-text">left</span>;</button><br>
+                 <button id="item-button-31" class="item-button"><b>background-position</b>: <span class="css-variable-text">right</span>;</button><br>
+                 <button id="item-button-32" class="item-button"><b>background-position</b>: <span class="css-variable-text">center</span>;</button><br>
+                 <button id="item-button-33" class="item-button"><b>background-position</b>: <span class="css-value-text">30% 70%</span>;</button><br>
+             </div>
+            <div id="view-panel-4" class="view-panel"></div>
+            <div id="description-panel-4" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div>
+    <div> <!--background-size-->
+        <h2 id="7">background-size</h2>
+        <p>Permite determinar el tamaño de la imagen de fondo.</p>
+        <p>NOTA: Todos las imagenes de ejemplo de esta sección tienen la propiedad <b>background-repeat: no-repeat;</b></p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-size</div>
+            <div class="button-panel">
+                 <button id="item-button-34" class="item-button"><b>background-size</b>: <span class="css-variable-text">auto</span>;</button><br>
+                 <button id="item-button-35" class="item-button"><b>background-size</b>: <span class="css-variable-text">cover</span>;</button><br>
+                 <button id="item-button-36" class="item-button"><b>background-size</b>: <span class="css-variable-text">contain</span>;</button><br>
+                 <button id="item-button-37" class="item-button"><b>background-size</b>: <span class="css-value-text">50%</span>;</button><br>
+                 <button id="item-button-38" class="item-button"><b>background-size</b>: <span class="css-value-text">200px 200px</span>;</button><br>
+            </div>
+            <div id="view-panel-5" class="view-panel"></div>
+            <div id="description-panel-5" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div>
+    <div> <!--background-attachment-->
+        <h2 id="8">background-attachment</h2>
+        <p>Define cómo se comportará la imagen de fondo al desplazarse por la página, es decir, si la imagen se desplaza junto a la página o permanece fija.</p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-attachment</div>
+            <div class="button-panel">
+                 <button id="item-button-39" class="item-button"><b>background-attachment</b>: <span class="css-variable-text">scroll</span>;</button><br>
+                 <button id="item-button-40" class="item-button"><b>background-attachment</b>: <span class="css-variable-text">fixed</span>;</button><br>
+                 <button id="item-button-41" class="item-button"><b>background-attachment</b>: <span class="css-variable-text">local</span>;</button><br>
+            </div>
+            <div id="view-panel-6" class="view-panel"></div>
+            <div id="description-panel-6" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div>    
+    <div> <!--background-origin-->
+        <h2 id="9">background-origin</h2>
+        <p>Define el punto de origen de una imagen de fondo.</p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-origin</div>
+            <div class="button-panel">
+                 <button id="item-button-42" class="item-button"><b>background-origin</b>: <span class="css-variable-text">border-box</span>;</button><br>
+                 <button id="item-button-43" class="item-button"><b>background-origin</b>: <span class="css-variable-text">padding-box</span>;</button><br>
+                 <button id="item-button-44" class="item-button"><b>background-origin</b>: <span class="css-variable-text">content-box</span>;</button><br>
+            </div>
+            <div id="view-panel-7" class="view-panel"></div>
+            <div id="description-panel-7" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div> 
+    <div> <!--background-blend-mode-->
+        <h2 id="10">background-blend-mode</h2>
+        <p> Define como se calcula el color final de un píxel cuando hay dos capas superpuestas. Cada modo de mezcla (blend) toma el valor del color de primer plano y el de fondo (color superior y color inferior, respectivamente), realiza su cálculo y devuelve el valor de color. La capa final visible es el resultado de realizar el cálculo del modo de mezcla en cada pixel sobrepuesto entre las capas mezcladas.</p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background-blend-mode</div>
+            <div class="button-panel">
+                <button id="item-button-45" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">normal</span>;</button><br>
+                 <button id="item-button-46" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">multiply</span>;</button><br>
+                 <button id="item-button-47" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">screen</span>;</button><br>                
+                 <button id="item-button-48" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">overlay</span>;</button><br>
+                 <button id="item-button-49" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">darken</span>;</button><br>
+                 <button id="item-button-50" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">lighten</span>;</button><br>
+                 <button id="item-button-51" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">color-dodge</span>;</button><br>
+                 <button id="item-button-52" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">color-burn</span>;</button><br>
+                 <button id="item-button-53" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">hard-light</span>;</button><br>
+                 <button id="item-button-54" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">soft-light</span>;</button><br>
+                 <button id="item-button-55" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">difference</span>;</button><br>
+                 <button id="item-button-56" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">exclusion</span>;</button><br>
+                 <button id="item-button-57" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">hue</span>;</button><br>
+                 <button id="item-button-58" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">saturation</span>;</button><br>
+                 <button id="item-button-59" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">color</span>;</button><br>
+                 <button id="item-button-60" class="item-button"><b>background-blend-mode</b>: <span class="css-variable-text">luminosity</span>;</button><br>
+            </div>
+            <div id="view-panel-8" class="view-panel"></div>
+            <div id="description-panel-8" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div>
+    <div> <!--background-->
+        <h2 id="11">background</h2>
+        <p> La propiedad background es un atajo (shorthand) para definir los valores individuales del fondo en una única linea CSS. Se puede usar background para definir los valores de una o de todas las propiedades siguientes: <b>background-attachment</b>, <b>color</b>, <b>image</b>, <b>position</b>, <b>repeat</b>. Las mismas deben estar separadas por un espacio, a menos que se usen dos o más valores de una misma propiedad como usar lineal-gradient y url de background-image.</p>
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">background</div>
+            <div class="button-panel">
+                 <button id="item-button-61" class="item-button"><b>background</b>:<span class="css-variable-text">linear-gradient</span>(45deg, rgba(255,0,0,0.6),rgba(0,0,0,0.6)),<span class="css-variable-text">url</span>(../../Image/dog-cheems.png) <span class="css-variable-text">no-repeat center</span>/60% <span class="css-variable-text">border-box</span>;</button><br>
+            </div>
+            <div id="view-panel-9" class="view-panel"></div>
+            <div id="description-panel-9" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+         </div>
+        <hr>
+    </div>
+    <script src="../JS/css-background.js"></script>
+    <script> includeHTML(); </script>
+</body>
+</html>

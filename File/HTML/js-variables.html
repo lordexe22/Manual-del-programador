@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+
+
+    <title>Manual del programador/js/variables</title>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-js.html"></div> <!--Reciclamos el nav de nav-html.html-->
+
+    <h1 id="titulo">Variables en JavaScript</h1>
+    <hr>
+    <div> <!--Contenido-->
+        <h2 id="0">Contenido</h2>
+        <ul>
+            <li><a href="#1">Introducción</a></li>
+            <li><a href="#2">Crear variables</a></li>
+            <li><a href="#3">Convención para nombrar variables</a></li>
+            <li><a href="#4">Variables locales y globales</a></li>      
+            <li><a href="#5">Ambitos de variables (scope)</a></li>    
+            <li><a href="#6">Elevación de variables (hoisting)</a></li>   
+            <li><a href="#7">Arrays como variables</a></li>
+            <li><a href="#8">Concluciones</a></li>
+        </ul>
+        <hr>
+    </div>
+    <div> <!--Introducción-->
+        <h2 id="1">Introducción</h2>
+        <p>Una variable es un contenedor que se usa para almacenar información dentro de ella. En JavaScript tenemos cuatro maneras de declarar una variable, esto es por medio de los comandos <b>var</b>, <b>let</b>, <b>const</b> y no usando nada.</p>
+        <p>Es importante señalar que las variables no son el valor en si mismo, sino un contenedor de dicho valor.</p>
+        <hr>
+    </div>
+    <div> <!--Crear variables-->
+        <h2 id="2">Crear variables</h2>
+        <p>Para usar una variable primero debe crearse. Para esto, el primer paso se conoce como <strong>declarar variables</strong>. En JavaScript una variable se declara para indicarle al programa a partir de qué lugar empieza a existir y qué nombre tendrá la misma. Para ello se indica el tipo de dato (<b>var</b>, <b>let</b>, <b>const</b>) seguido del nombre de la variable.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">var</span> <span class="js-name-text">nombre</span>; <br>
+            <span class="js-declare-text">let</span> <span class="js-name-text">animales</span>; 
+        </div>
+
+        <p>El próximo paso es asignarle a la variable un valor, el cual será almacenado dentro de la misma. Esto se conoce como <strong>inicializar variables</strong>. Para inicializar una variable se usa el signo = seguido del dato que queremos almacenar en la variable. </p>
+
+        <div class="code-block">
+            <span class="js-name-text">nombre</span> = <span class="js-string-text">"Carlos"</span>; <br>
+            <span class="js-name-text">animales</span> = [<span class="js-string-text">"perro"</span>, <span class="js-string-text">"gato"</span>, <span class="js-string-text">"conejo"</span>]; 
+        </div>
+
+        <p>Una variable puede inicializarse en la misma linea de código que es declarada o también puede iniciarlizarse en una linea posterior. Si un programador trata de leer los datos de una variable que no ha sido inicializada, en JavaScript se le asigna el valor de <b>undefinied</b>.</p>
+        
+        <div class="code-block">
+            <span class="js-declare-text">const</span> <span class="js-name-text">pi</span> = <span class="js-value-text">3.1415</span>; <br>
+            <span class="js-declare-text">let</span> <span class="js-name-text">comida</span>;<br>
+            <span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">comida</span>); <span class="js-comment-text">// comida = undefinied</span><br>
+            <span class="js-name-text">comida</span> = <span class="js-string-text">"Manzana"</span>;<br>
+            <span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">comida</span>); <span class="js-comment-text">// comida = Manzana</span><br>
+        </div>
+
+        <p class="note"><strong>NOTA</strong>: Las variables declaradas con <b>var</b> y <b>let</b> pueden ser declaradas sin iniciarlizarse y en dicho caso se les asigna el valor de <b>undefinied</b>.</p>
+
+        <p class="note"><strong>NOTA</strong>: Las variables de tipo <b>const</b> deben ser declaradas e inicializadas en la misma línea. No se puede dejar una variable de tipo const sin inicializar.</p>
+
+
+        <p>También podemos crear variables sin indicar su tipo, aunque como pasa con las variables de tipo const, estas deben ser declaradas e inicializadas en la misma linea.</p>
+
+        <div class="code-block">
+            <span class="js-name-text">num1</span> = <span class="js-value-text">2.2</span>;<br>
+            <span class="js-name-text">num2</span> = <span class="js-value-text">3</span>;<br>
+            <span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">num1</span> + <span class="js-name-text">num2</span>);<span class="js-comment-text"> // 5.2</span><br>
+        </div>
+        
+        <p>Se puede crear más de una variable en la misma declaración si separamos los nombres de las distintas variables con una coma. Incluso es posible inicializarlas selectivamente en caso de usar var o let.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">let</span> <span class="js-name-text">impresora</span> = <span class="js-string-text">"HP"</span>, <span class="js-name-text">comida</span> = <span class="js-string-text">"Pera"</span>, <span class="js-name-text">numero</span> = <span class="js-value-text">"5"</span>;
+        </div> 
+
+        <p>Otro punto a evaluar es la redeclaración de variables. Esto solo es permitido con variables del tipo <b>var</b>, las variables del tipo <b>let</b> y <b>const</b> no pueden ser redeclaradas.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">var</span> <span class="js-name-text">num1</span> = <span class="js-value-text">1</span>;<br>
+            <span class="js-declare-text">let</span> <span class="js-name-text">num2</span> = <span class="js-value-text">2</span>;<br>
+            <span class="js-declare-text">const</span> <span class="js-name-text">num3</span> = <span class="js-value-text">3</span>;<br><br>
+
+            <div class="good-code"><span class="js-declare-text">var</span> <span class="js-name-text">num1</span> = <span class="js-value-text">10</span>;<br></div>
+            <div class="bad-code"><span class="js-declare-text">let</span> <span class="js-name-text">num2</span> = <span class="js-value-text">20</span>; <span class="js-comment-text"> // SyntaxError: Identifier 'num2' has already been declared</span><br></div>
+            <div class="bad-code"><span class="js-declare-text">const</span> <span class="js-name-text">num3</span> = <span class="js-value-text">30</span> <span class="js-comment-text"> // SyntaxError: Identifier 'num3' has already been declared</span>;</div>
+        </div>
+
+        <p>Finalmente, se pueden reasignar nuevos valores a las variables ya creadas con <b>var</b> y <b>let</b>, esto lo hacemos escribiendo el nombre de la variable, seguido de un signo = y finalmente el nuevo valor asignado. Las variables creadas con <b>const</b> no permiten la reasignación de valores.</p>           
+
+        <div class="code-block">
+            <span class="js-declare-text">var</span> <span class="js-name-text">num1</span> = <span class="js-value-text">1</span>;<br>
+            <span class="js-declare-text">let</span> <span class="js-name-text">num2</span> = <span class="js-value-text">2</span>;<br>
+            <span class="js-declare-text">const</span> <span class="js-name-text">num3</span> = <span class="js-value-text">3</span>;<br><br>
+
+            <div class="good-code"><span class="js-name-text">num1</span> = <span class="js-value-text">10</span>;<span class="js-comment-text"> // num1 = 10</span><br></div>
+            <div class="good-code"><span class="js-name-text">num2</span> = <span class="js-value-text">20</span>;<span class="js-comment-text"> // num2 = 20</span><br></div>
+            <div class="bad-code"><span class="js-name-text">num3</span> = <span class="js-value-text">30</span><span class="js-comment-text"> // error >> Assignment to constant variable.</span>;<br></div>
+
+        </div>
+        <hr>
+    </div>
+    <div> <!--Convención para nombrar variables-->
+        <h2 id="3">Convención para nombrar variables</h2>
+        <p>El programador es libre de ponerle a la variable el nombre que desee, sin embargo, hay algunas excepciones y reglas básicas a tener en cuenta a la hora de nombrar una variable.</p>
+        <ul>
+            <li>Se puede usar caracteres en los rangos [a-z] [A_Z] [0-9], el signo dolar "$" y el guión bajo "_". No se pueden usar otros tipos de caracteres porque causarian errores o serian dificiles de comprender.</li>
+            <li>No usar guión bajo al comienzo del nombre. Esto es usado en algunos constructores en JavaScript y tienen un significado especial, por lo cual crear variables que inicien en guión bajo podria ser confuso.</li>
+            <li>No se puede usar números al comienzo del nombre. Esto no esta permitido y causará errores.</li>
+            <li>Una convención segura para nombrar variables es "<strong>lower camel case</strong>". Se usa en variables cuyo nombre son dos o más palabras y en ella la primer palabra inicia siempre en minúscula y la primer letra del resto de palabras comienzan en mayúscula. Algunos ejemplos podrian ser nombreCliente, equiposVendidos, colorDeAlerta, etc.</li>
+            <li>Hacer nombre de variables intuitivos que describan el tipo de dato que contiene. No asignar simplmente letras y números o frases largas.</li>
+            <li>Las variables son "<strong>case sensitive</strong>" (sensibles a mayúsculas/minúsculas), entonces MiEdad es distinto que miEdad.</li>
+            <li>No se pueden usar como nombre de funciones las palabras reservadas por JavaScript, como por ejemplo var, let, const, for, while, etc.</li>
+        </ul>
+        <hr>
+    </div>   
+    <div> <!--Variables locales y globales-->
+        <h2 id="4">Variables locales y globales</h2>
+        <p>Las variables, sin importar con que instrucción es creada, pueden categorizarse en <strong>variables locales</strong> y <strong>variables globales.</strong></p>
+        <p>Cuando se inicializa una variable afuera de una función se denomina variable global y se puede acceder y modificar la misma en cualquier parte del programa. Si la variable se crea dentro de una función se la denomina variable local y la misma solo existe y puede ser accedida y editada dentro de la función en la cual es creada.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">var</span> <span class="js-name-text">dia</span> = <span class="js-string-text">"lunes"</span>;<br>
+            <span class="js-declare-text">function</span> <span class="js-name-text">asignarMes</span>(){<br>
+            <span class="tabulation1 js-declare-text">var</span> <span class="js-name-text">mes</span> = <span class="js-string-text">"enero"</span>;<br>
+            <div class="good-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">dia</span>); <span class="js-comment-text">// dia = lunes</span><br></div>
+            <div class="good-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">mes</span>); <span class="js-comment-text">// mes = enero</span><br></div>}<br>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">dia</span>); <span class="js-comment-text">// dia = lunes</span><br></div>
+            <div class="bad-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">mes</span>); <span class="js-comment-text">// error >> mes is not defined</span><br></div>
+        </div>
+
+        <p>Un detalle a tener en cuenta es que las variables globales se almacenan en la memoria durante toda la ejecución del programa, mientras que las variables locales solo se almacenan en memoria solamente durante la ejecución de la función o bloque. Por esto mismo, lo mas óptimo es intentar trabajar siempre en la medida de lo posible con variables locales para ahorrar recursos.</p>
+        <p>Otra cosa importante a tener en cuenta es que cuando creamos una variable global y posteriormente creamos una variable local con el mismo nombre, dentro del bloque o función donde fue creada siempre se tiene preferencia sobre la variable local al intentar referenciarla, indistintamente de si la variable es declarada con <b>var</b>, <b>let</b> o <b>const</b>.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">const</span> <span class="js-name-text">num</span> = <span class="js-value-text">1</span>;<br>
+            <span class="js-declare-text">function</span> <span class="js-name-text">asignarMes</span>(){<br>
+            <span class="tabulation1 js-declare-text">const</span> <span class="js-name-text">num</span> = <span class="js-value-text">100</span>;<br>
+            <span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">num</span>); <span class="js-comment-text">// num = 100</span><br>}<br>
+            <span class="js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>
+            <span class="tabulation1 js-declare-text">const</span> <span class="js-name-text">num</span> = <span class="js-value-text">10000</span>;<br>
+            <span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">num</span>); <span class="js-comment-text">// num = 10000</span><br>}<br>
+        </div>
+
+        <hr>
+    </div> 
+    <div> <!--Ambitos de variables (scope)-->
+        <h2 id="5">Ambitos de variables (scope)</h2>
+        <p>También conocido como <strong>alcance de variables</strong> o <strong>scope de variables</strong>, es la zona en la cual las variables creadas tienen alcance, es decir, la zona en la cual se puede acceder a ellas. Según declaremos una variable con <b>var</b>, <b>let</b> o <b>const</b> el comportamiento varía.</p>
+        <p>Si creamos variables fuera de una función o cualquier otro bloque de código, las mismas serán variables globales y podremos acceder a ellas en cualquier punto del programa, decimos entonces que estas variables tienen un scope global. Entiendase bloque de código a el contenido entre llaves {}, que podria ser una función, ciclo, etc.</p>
+        <p>En cambio si la variable se crea dentro de una función o un bloque, estas son variables locales y solos existiran dentro de la funcicón o bloque en la cual fueron creadas, decimos entonces que estas variables tienen un scope local. Sin embargo, las variables locales se dividen a su vez en variables con <strong>scope de funciones</strong> y <strong>scope de bloque</strong>. Las variables con scope de bloque solo existen dentro del bloque en el cual son creadas, mientras que las variables con scope de funciones solo existen dentro de las funciones en las cuales son creadas.</p>
+        <p>Las variables locales creadas con <b>var</b> siempre tienen un scope de función, mientras que las variables creadas con <b>let</b> y <b>const</b> siempre tienen un scope de bloque. Esto se ilustra si creamos un bloque (por ejemplo un if) dentro de una función como en el siguiente ejemplo:</p>
+        
+        <div class="code-block">
+            <span class="js-declare-text">function</span> <span class="js-name-text">contarTres</span>(){<br>
+            <span class="tabulation1 js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>
+            <span class="tabulation2 js-declare-text">var</span> <span class="js-name-text">varNum</span> = <span class="js-value-text">1</span>;<br>
+            <span class="tabulation2 js-declare-text">let</span> <span class="js-name-text">letNum</span> = <span class="js-value-text">2</span>;<br>
+            <span class="tabulation2 js-declare-text">const</span> <span class="js-name-text">constNum</span> = <span class="js-value-text">3</span>;<br><span class="tabulation1">}</span><br>
+            <div class="good-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 1</span><br></div>
+            <div class="bad-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">letNum</span>); <span class="js-comment-text">// error >> letNum is not defined</span><br></div>
+            <div class="bad-code"><span class="tabulation1  js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">constNum</span>); <span class="js-comment-text">// error >> constNum is not defined</span><br></div>}
+            <div class="bad-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// error >> varNum is not defined</span><br></div>
+        </div>
+
+        <p>En el ejemplo podemos ver una función <b>contarTres()</b> cuyo contenido es un condicional if y en el contenido del if creamos las tres variables. Las variables son creadas dentro de un bloque (del if) que a su vez pertenecen a una función. Como las variables <b>let</b> y <b>const</b> tienen scope de bloque, si nos salimos del bloque e intentamos leerlos se nos indicara que las variables no fueron definidas, en cambio, la variable con <b>var</b> como tiene scope de función nos permite acceder a su valor por fuera del bloque if, sin embargo, la variable se pierde si salimos de la función en la cual es definida.</p>
+        <p>Este comportamiento de las variables declaradas con <b>var</b> se mantiene sin importar la profundidad del bloque en las cuales son creadas.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">function</span> <span class="js-name-text">contarTres</span>(){<br>
+            <span class="tabulation1 js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>
+            <span class="tabulation2 js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>            
+            <span class="tabulation3 js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>            
+            <span class="tabulation4 js-declare-text">var</span> <span class="js-name-text">varNum</span> = <span class="js-value-text">1</span>;<br> 
+            <span class="tabulation3">}</span><br>
+            <div class="good-code"><span class="tabulation3 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 1</span><br></div>
+            <span class="tabulation2">}</span><br>
+            <div class="good-code"><span class="tabulation2 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 1</span><br></div>           
+            <span class="tabulation1">}</span><br>
+            <div class="good-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 1</span><br></div>}
+            <div class="bad-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// error >> varNum is not defined</span><br></div>
+        </div>
+        <p>Solamente no podemos acceder al valor de la variable al salir de la función.</p>
+        <p>Lo último importante sobre este tema es que si declaramos una variable del tipo <b>var</b> dentro de un bloque que no pertenezca a una función, esta será creada de manera global.</p>
+        <div class="code-block">
+            <span class="js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>
+            <span class="tabulation1 js-declare-text">var</span> <span class="js-name-text">varNum</span> = <span class="js-value-text">1</span>;<br>}<br>
+            <span class="js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>
+            <div class="good-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 1</span><br></div>}<br>
+            <span class="js-declare-text">function</span> <span class="js-name-text">mostrarNumero</span>(){<br>
+            <div class="good-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 1</span><br></div>}<br>
+        <hr>
+        </div> 
+        <p>Este comportamiento se debe a que la zona global del código se considera como un scope de función y en el ejemplo anterior se puede considerar al bloque if como un bloque que se encuentra dentro del scope de función global del programa. Como las variables con <b>var</b> tienen scope de función se acaban por sobreescribir. Este comportamiento resulta peligroso ya que si creamos una variable global con <b>var</b> y dentro de un bloque creamos otra variable con <b>var</b> que tenga el mismo nombre, esta última variable reemplazara el contenido original de la variable global.</p>
+        <div class="code-block">
+            <span class="js-declare-text">var</span> <span class="js-name-text">varNum</span> = <span class="js-value-text">1</span>;<br>
+            <span class="js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>
+            <span class="tabulation1 js-declare-text">var</span> <span class="js-name-text">varNum</span> = <span class="js-value-text">100</span>;<br>}<br>
+            <span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 100</span><br>
+        </div> 
+        <hr>
+    </div> 
+    <div> <!--Elevación de variables (hoisting)-->
+        <h2 id="6">Elevación de variables (hoisting)</h2>
+        <p>La elevación de variables o hoisting de variables es un fenómeno que ocurre con las variables creadas con var. Las declaraciones de estas variables son asignadas en memoria durante la fase de compilación que se ejecutan al inicio del programa, por lo cual, las variables de tipo <b>var</b> serán declaradas (pero no inicializadas) dentro del scope al que pertenezcan incluso antes de llegar a la linea donde se crea dicha variable. Esto se ilustra en el siguiente ejemplo.  
+        </p>
+
+        <div class="code-block">
+            <span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = undefinied</span><br>
+            <span class="js-declare-text">var</span> <span class="js-name-text">varNum</span> = <span class="js-value-text">1</span>;<br>
+            <span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 1</span><br>       
+        </div>
+
+        <p>Como las variables con <b>var</b> tienen un scope de función, si declaramos una variable dentro de un bloque, esta tendra exactamente el mismo comportamiento y será declarada al inicio, incluso antes de ejecutar el bloque que define la variable.</p>
+
+        <div class="code-block">
+            <span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = undefinied</span><br>
+            <span class="js-conditional-text">if</span>( <span class="js-declare-text">true</span> ){<br>
+            <span class="tabulation1 js-declare-text">var</span> <span class="js-name-text">varNum</span> = <span class="js-value-text">1</span>;<br>}<br>
+            <span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text">// varNum = 1</span><br>
+        </div>
+
+        <p>Si declaramos la variable con <b>var</b> dentro de una función, el scope de función que tienen las variables <b>var</b> no permitirá que sea declarada fuera de dicha función, pero si al comienzo de la misma.</p>
+
+        <div class="code-block">
+            <div class="bad-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text"> // error >> varNum is not defined</span><br></div>
+            <span class="js-declare-text">function</span> <span class="js-name-text">mostrarNumero</span>(){<br>
+            <div class="good-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text"> // varNum = undefinied</span><br></div>
+            <span class="tabulation1 js-declare-text">var</span> <span class="js-name-text">varNum</span> = <span class="js-value-text">1</span>;<br>
+            <div class="good-code"><span class="tabulation1 js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text"> // varNum = 1</span><br></div>}<br>
+            <div class="bad-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">varNum</span>); <span class="js-comment-text"> // error >> varNum is not defined</span><br></div>
+        </div>
+
+        <p>Como se mensiono antes, esta característica es solamente de las variables declaradas con <b>var</b>, si intentamos hacer esto con variables declaradas con <b>let</b> o <b>const</b> recibiremos un mensaje de error.</p>
+
+        <div class="code-block">
+            <div class="bad-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">letNum</span>); <span class="js-comment-text"> // Cannot access 'letNum' before initialization</span><br></div>
+            <div class="bad-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">constNum</span>); <span class="js-comment-text"> // Cannot access 'constNum' before initialization </span><br></div>
+            <span class="js-declare-text">let</span> <span class="js-name-text">letNum</span> = <span class="js-value-text">2</span>;<br>
+            <span class="js-declare-text">const</span> <span class="js-name-text">constNum</span> = <span class="js-value-text">3</span>;<br>
+        </div>
+    </div> 
+    <div> <!--Arrays como variables-->
+        <h2 id="7">Arrays como variables</h2>
+        <p>En JavaScript es posible asignar arreglos (arrays) en las variables. Para esto podemos usar cualquiera de los tres comandos vistos hasta ahora. Para declarar un arreglo debemos poner el contenido del mismo dentro de corchetes y separando sus variables por coma. El tipo de dato que contiene puede ser cualquier cosa. Las propiedades del scope y el hoisting siguen siendo los mismos que se analizaron previamente.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">var</span> <span class="js-name-text">varArray</span> = [<span class="js-value-text">1</span>,<span class="js-value-text"> 2</span>,<span class="js-value-text"> 3</span>];<br>
+            <span class="js-declare-text">let</span> <span class="js-name-text">letArray</span> = [<span class="js-string-text">'1'</span>,<span class="js-string-text"> '2'</span>,<span class="js-string-text"> '3'</span>];<br>
+            <span class="js-declare-text">const</span> <span class="js-name-text">constArray</span> = [<span class="js-name-text">true</span>,<span class="js-name-text"> false</span>];<br>
+        </div> 
+
+        <p>Cuando declaremos como variable un array es recomendable evitar hacerlo con <b>var</b> para evitar posibles errores debido a su scope y hoisting. Es por esto que se suelen declarar usando <b>let</b> o <b>const</b>, aunque hay que tener en cuenta una pequeña diferencia entre ambos. A los arreglos declarados con <b>let</b> es posible editarle un valor en particular dentro del mismo, cambiar el arreglo por completo o reasignarle un nuevo tipo de dato sin problema alguno.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">let</span> <span class="js-name-text">letArray</span> = [<span class="js-string-text">'1'</span>,<span class="js-string-text"> '2'</span>,<span class="js-string-text"> '3'</span>];<br>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">letArray</span>); <span class="js-comment-text"> // letArray = ['1', '2', '3']</span></div><br>
+
+            <span class="js-name-text">letArray[<span class="js-value-text">0</span>] = <span class="js-name-text">undefinied</span>; <span class="js-comment-text"> // Cambiamos el primer valor del arreglo</span>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">letArray</span>); <span class="js-comment-text"> // letArray = [undefinied, '2', '3']</span></div><br>
+
+            <span class="js-name-text">letArray[<span class="js-value-text">3</span>] = <span class="js-name-text">true</span>; <span class="js-comment-text"> // Agregamos un nuevo elemento en la posición 3 del arreglo</span>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">letArray</span>); <span class="js-comment-text"> // letArray = [undefinied, '2', '3', true]</span></div><br>
+
+            <span class="js-name-text">letArray</span> = [<span class="js-value-text">100</span>,<span class="js-value-text"> 200</span>]; <span class="js-comment-text"> // Agregamos un nuevo arreglo a la variable</span><br>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">letArray</span>); <span class="js-comment-text"> // letArray = [100, 200]</span></div><br>           
+
+            <span class="js-name-text">letArray = <span class="js-name-text">1</span>; <span class="js-comment-text"> // Asignamos otro tipo de dato a la variable</span><br>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">letArray</span>); <span class="js-comment-text"> // letArray = 1</span></div>
+
+        </div> 
+
+        <p>En cambio, los arreglos creados con <b>const</b> solamente permiten cambiar el contenido dentro del arreglo elemento por elemento, pero no se les puede reasignar un nuevo arreglo u otro tipo de variable.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">const</span> <span class="js-name-text">constArray</span> = [<span class="js-name-text">true</span>,<span class="js-name-text"> false</span>];<br>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">constArray</span>); <span class="js-comment-text"> // constArray = [true, false]</span></div><br>
+
+            <span class="js-name-text">constArray[<span class="js-value-text">0</span>] = <span class="js-name-text">undefinied</span>; <span class="js-comment-text"> // Cambiamos el primer valor del arreglo</span>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">constArray</span>); <span class="js-comment-text"> // constArray = [undefinied, false]</span></div><br>
+
+            <span class="js-name-text">constArray[<span class="js-value-text">2</span>] = <span class="js-name-text">true</span>; <span class="js-comment-text"> // Agregamos un nuevo elemento en la posición 2 del arreglo</span>
+            <div class="good-code"><span class="js-name-text">console</span>.<span class="js-method-text">log</span>(<span class="js-name-text">constArray</span>); <span class="js-comment-text"> // constArray = [undefinied, false, true]</span></div><br>
+
+            <div class="bad-code"><span class="js-name-text">constArray</span> = [<span class="js-value-text">100</span>,<span class="js-value-text"> 200</span>]; <span class="js-comment-text"> // error >> Assignment to constant variable</span></div><br>
+
+            <div class="bad-code"><span class="js-name-text">constArray</span> =<span class="js-value-text"> 100</span>; <span class="js-comment-text"> // error >> Assignment to constant variable</span><br></div>
+
+
+        </div> 
+        
+
+    </div> 
+    <div> <!--Conclusiones-->
+        <h2 id="8">Conclusiones</h2>
+        <p>A lo largo de este apartado hemos visto el comportamiento de las variables declaradas con <b>var</b>, <b>let</b> y <b>const</b> bajo distintas circunstancias, vimos como crear y manipular variables, asi como también las diferencias que presentan en el scope y hoisting.</p>
+        <p>Se recomienda que en la medida de lo posible que todas las variables que se declaren sean a nivel local para evitar almacenar innecesariamente la información en memoria y a su vez que sean variables del tipo <b>let</b> o mejor aún <b>const</b> cuando sepamos que el valor de dicha variable no cambiara a lo largo del programa. Con esto evitaremos los comportamientos extraños que presentan las variables declaradas con <b>var</b>, como aquellos presentados en las secciones de scope y hoisting, razones por las cuales se recomienda evitar su uso.</p>
+    </div> 
+
+
+
+
+    <script src="../JS/js-variables.js"></script>
+    <script> includeHTML(); </script>
+</body>
+</html>

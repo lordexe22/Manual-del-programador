@@ -43,9 +43,9 @@ nav{
     position:fixed;
     background-color:var(--background-nav);
     left: 0;
-    top: 5.5em;
+    top: 4.35em;
     bottom: 0;
-    width: 17em;
+    width: 13em;
     padding:1em;
 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -66,6 +66,7 @@ header{
     height: 2em;
     padding: 1em;
     z-index: 1;
+
 }
 
 /*************************************************************************************************/
@@ -151,16 +152,6 @@ input.radio-tab ~ div.code-block-tab{ display: none; }
 #html-tab-18:checked ~ div.html-tab-18,
 #html-tab-19:checked ~ div.html-tab-19,
 #html-tab-20:checked ~ div.html-tab-20,
-#html-tab-21:checked ~ div.html-tab-21,
-#html-tab-22:checked ~ div.html-tab-22,
-#html-tab-23:checked ~ div.html-tab-23,
-#html-tab-24:checked ~ div.html-tab-24,
-#html-tab-25:checked ~ div.html-tab-25,
-#html-tab-26:checked ~ div.html-tab-26,
-#html-tab-27:checked ~ div.html-tab-27,
-#html-tab-28:checked ~ div.html-tab-28,
-#html-tab-29:checked ~ div.html-tab-29,
-#html-tab-30:checked ~ div.html-tab-30,
 #css-tab-1:checked ~ div.css-tab-1,
 #css-tab-2:checked ~ div.css-tab-2,
 #css-tab-3:checked ~ div.css-tab-3,
@@ -181,16 +172,6 @@ input.radio-tab ~ div.code-block-tab{ display: none; }
 #css-tab-18:checked ~ div.css-tab-18,
 #css-tab-19:checked ~ div.css-tab-19,
 #css-tab-20:checked ~ div.css-tab-20,
-#css-tab-21:checked ~ div.css-tab-21,
-#css-tab-22:checked ~ div.css-tab-22,
-#css-tab-23:checked ~ div.css-tab-23,
-#css-tab-24:checked ~ div.css-tab-24,
-#css-tab-25:checked ~ div.css-tab-25,
-#css-tab-26:checked ~ div.css-tab-26,
-#css-tab-27:checked ~ div.css-tab-27,
-#css-tab-28:checked ~ div.css-tab-28,
-#css-tab-29:checked ~ div.css-tab-29,
-#css-tab-30:checked ~ div.css-tab-30,
 #js-tab-1:checked ~ div.js-tab-1,
 #js-tab-2:checked ~ div.js-tab-2,
 #js-tab-3:checked ~ div.js-tab-3,
@@ -210,17 +191,7 @@ input.radio-tab ~ div.code-block-tab{ display: none; }
 #js-tab-17:checked ~ div.js-tab-17,
 #js-tab-18:checked ~ div.js-tab-18,
 #js-tab-19:checked ~ div.js-tab-19,
-#js-tab-20:checked ~ div.js-tab-20,
-#js-tab-21:checked ~ div.js-tab-21,
-#js-tab-22:checked ~ div.js-tab-22,
-#js-tab-23:checked ~ div.js-tab-23,
-#js-tab-24:checked ~ div.js-tab-24,
-#js-tab-25:checked ~ div.js-tab-25,
-#js-tab-26:checked ~ div.js-tab-26,
-#js-tab-27:checked ~ div.js-tab-27,
-#js-tab-28:checked ~ div.js-tab-28,
-#js-tab-29:checked ~ div.js-tab-29,
-#js-tab-30:checked ~ div.js-tab-30
+#js-tab-20:checked ~ div.js-tab-20
 { display: block; }
 
 /* Etiqueta que no esta seleccionada */
@@ -255,18 +226,11 @@ input.radio-tab:checked + label.radio-tab{
     padding: 1em;
     font-family: monospace;
 }
-.good-code{
-    background-color:lightgreen ;
-}
-.bad-code{
-    background-color:lightcoral ;
-}
-
 
 /*************************************************************************************************/
 /* TEXTOS DE CODIGO */
 /*************************************************************************************************/
-.html-comment-text{ color: dargreen; }
+.html-comment-text{ color: darkgreen; }
 .html-label-text{ color:darkblue; }
 .html-attribute-text{ color:firebrick; }
 .html-variable-text{ color:purple; }
@@ -275,19 +239,69 @@ input.radio-tab:checked + label.radio-tab{
 .css-comment-text{ color: darkgreen; }
 .css-body-text{ color:darkred; }
 .css-attribute-text{ color:firebrick; }
-.css-variable-text{ color:firebrick; font-weight: bold;}
+.css-variable-text{ color:purple; }
 .css-value-text{ color:dodgerblue; }
 .css-hooks-text{ color:crimson; }
 
-.js-comment-text{ color: darkgreen; font-weight: bold; }
-.js-declare-text{ color:darkblue; font-weight: bold; }
+.js-comment-text{ color: darkgreen; }
+.js-declare-text{ color:darkred; }
 .js-method-text{ color:olivedrab; }
-.js-name-text{ color:rgb(0, 63, 63); font-weight: bold; }
+.js-name-text{ color:darkblue; }
 .js-variable-text{ color:purple; }
-.js-value-text{ color:dodgerblue; font-weight: bold;}
+.js-value-text{ color:dodgerblue; }
 .js-conditional-text{ color:blueviolet; }
-.js-string-text{ color:chocolate; font-weight: bold; }
+.js-string-text{ color:peru; }
 .js-hooks-text{ color:crimson; }
+
+/*************************************************************************************************/
+/* PAANEL INTERACTIVO */
+/*************************************************************************************************/
+
+.iteractive-panel{
+    display: grid;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    background-color: lightgray;
+    border: thin black solid;
+    border-radius: 0.2em;
+    padding: 0.5em;
+}
+.title-panel{
+    background-color: red;
+    grid-column: 1 / 6;
+    grid-row: 1;
+    text-align: center;
+}
+.button-panel{
+    background-color: green;
+    grid-column: 1 / 6;
+    grid-row: 2 / 11;
+    overflow-y: scroll;
+    max-height: 20em;
+ }
+.view-panel{
+    background-color: yellow;
+    grid-column: 6 / 13;
+    grid-row: 1 / 11;
+    border:thick black solid;
+    height: 21.6em;
+}
+.code-panel{
+    background-color: magenta;
+    grid-column: 1 / 13;
+    grid-row: 11 / 13;
+    padding: 1em;
+
+}
+.item-button{
+    width: 98%;
+    margin: 0.1em 1%;
+    background-color: rgba(255,0,0,0.1);
+    height: 4em;
+}
+.active-button{
+    background-color: yellow;
+}
 
 /*************************************************************************************************/
 /* ESPECIALES */

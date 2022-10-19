@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+
+    <title>Manual del programador/js</title>
 </head>
 <body>
-    <h1>Java Script</h1>
+
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-js.html"></div> <!--Reciclamos el nav de nav-js.html-->
+
+    <h1 id="titulo">JavaScript</h1>
+    <p>Contenido de la pagina principal de JavaScript (llenar)</p>
+    <hr>
+
+    <script> includeHTML(); </script>
+    
 </body>
 </html>

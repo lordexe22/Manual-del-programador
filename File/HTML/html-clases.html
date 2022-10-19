@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+    <script src="../JS/ejemplos-html.js"></script><!--Script para pruebas-->
+
+
+    <title>Manual del programador/html/clases</title>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-html.html"></div> <!--Reciclamos el nav de nav-html.html-->
+
+
+    <h1 id="titulo">Clases</h1>
+    <hr>
+
+    <div> <!--Contenido-->
+        <h2 id="0">Contenido</h2>
+        <ul>
+            <li><a href="#1">Introducción</a></li>
+            <li><a href="#2">Aplicación</a></li>
+            <li><a href="#3">Clases en HTML/CSS</a></li>
+            <li><a href="#4">Clases en HTML/JavaScript</a></li>
+            <li><a href="#5">Clases múltiples</a></li>    
+            <li><a href="#6">Sumario</a></li>    
+
+        </ul>
+
+    </div>
+    <hr>
+    <div> <!--Introducción-->
+        <h2 id="1">Introducción</h2>
+        <p>Una clase en HTML es un atributo que se usa para especificar "la clase" de un elemento HTML.</p>
+        <p>Para especificar la clase de un elemento se utiliza el atributo <strong>class</strong> y posteriormente se indica el nombre de la clase creada.</p>
+        <p>El atributo <strong>class</strong> se puede aplicar en cualquier elemento HTML y varios elementos HTML pueden compartir la misma clase.</p>
+         <br>
+    </div>
+    <hr>
+    <div> <!--Aplicación-->
+        <h2 id="2">Aplicación</h2>
+        <p>El atributo <strong>class</strong> se usa habitualmente como punto de referencia para poder acceder al elemento que lo contiene. Esto se logra referenciando el nombre de la clase a la cual pertenece el objeto HTML.</p>
+        <p>Esto es particularmente util cuando se desea acceder o manipular un elemento, ya sea para aplicar estilos con CSS o alterar su comportamiento con Java Script.</p>
+    </div>
+    <hr>
+    <div> <!--Clases en HTML/CSS-->
+        <h2 id="3">Clases en HTML/CSS</h2>
+        <p>Para ver como trabaja una clase, crearemos un elemento HTML y posteriormente se le haran modificaciones mediante CSS y JavaScripts. Para referencia una clase en CSS, se usa un punto (.) más el nombre de la clase, finalmente se cierra entre llaves los atributos que se le asignaran a dicha clase.</p>    
+        <p>Para comenzar crearemos un elemento div, le asignaremos un color de fondo verde oscuro, un color de texto blanco y un padding de 10 pixeles. No es importante entender como funciona el código en CSS, sino observar que se accede al elemento mediante el nombre de su clase.</p>
+        <br>
+        <div> <!--Bloque de código en tabs (HTML/CSS/JS)-->
+    
+            <input type="radio" name="tab-1" id="html-tab-1" class="radio-tab" checked>
+            <label for="html-tab-1" class="radio-tab">HTML</label>
+    
+            <input type="radio" name="tab-1" id="css-tab-1" class="radio-tab">
+            <label for="css-tab-1" class="radio-tab">CSS</label>    
+    
+            <div class="code-block-tab html-tab-1">
+                <span class="tabulation0 html-comment-text">&lt;!--Creamos un elemento div y le asignamos una clase llamada color--&gt;</span><br><br>
+                <span class="tabulation0">&lt;</span><span class="html-label-text">div</span><span class="html-attribute-text"> class</span><span>=</span><span class="html-variable-text">"color"</span><span>&gt;</span><br>
+                <span class="tabulation1">Contenido</span><br>
+                <span class="tabulation0">&lt;/</span><span class="html-label-text">div</span><span>&gt;</span><br>
+            </div>
+
+            <div class="code-block-tab css-tab-1">
+                <span class="tabulation0 css-comment-text">/*Creamos el cuerpo de la clase color*/</span><br><br>
+                <span class="tabulation0 css-body-text">.color</span><span class="css-hooks-text"> {</span><br>
+                <span class="tabulation1 css-attribute-text">background-color</span><span>:</span><span class="css-variable-text">darkgreen</span><span>;</span><br>
+                <span class="tabulation1 css-attribute-text">color</span><span>:</span><span class="css-variable-text">white</span><span>;</span><br>
+                <span class="tabulation1 css-attribute-text">padding</span><span>:</span><span class="css-value-text">10px</span><span>;</span><br>
+
+                <span class="tabulation0 css-hooks-text">}</span>
+            </div>
+            <br>
+            <div style="background-color:darkgreen ; color: white; padding: 10px;">Contenido</div>
+        </div>
+        <p>Es importante notar como accedemos al elemento div mediante su clase "color" y podemos modificarlo visualmente desde el código en CSS.</p>
+    </div>
+    <hr>
+    <div> <!--Clases en HTML/JavaScript-->
+        <h2 id="4">Clases en HTML/JavaScript</h2>
+        <p>En este caso, se realiza un Script que oculte el contenido de los elementos que contengan la clase "ocultar". Para ello pulsamos un boton que accione el Script. Al igual que en el caso anterior, no es importante entender como funciona el código en Java Script, sino observar que se accede al elemento mediante el nombre de su clase.</p>
+
+        <br>
+        <div> <!--Bloque de código en tabs (HTML/CSS/JS)-->
+    
+            <input type="radio" name="tab-2" id="html-tab-2" class="radio-tab" checked>
+            <label for="html-tab-2" class="radio-tab">HTML</label>
+    
+            <input type="radio" name="tab-2" id="js-tab-2" class="radio-tab">
+            <label for="js-tab-2" class="radio-tab">Java Script</label>    
+    
+            <div class="code-block-tab html-tab-2">
+
+                <span class="tabulation0 html-comment-text">Al presionar el boton, se ejecuta la función "funciónOcultar" dentro del Script que contenga el código de Java Script</span><br>
+                <span class="tabulation0">&lt;</span><span class="html-label-text">button </span><span class="html-attribute-text">onclick</span><span>=</span><span class="html-variable-text">"funcionOcultar();"</span><span>&gt;</span><br>
+                <span class="tabulation1">Ocultar elementos</span><br>
+                <span class="tabulation0">&lt;/</span><span class="html-label-text">button</span><span>&gt;</span><br><br>
+
+                <span class="tabulation0">&lt;</span><span class="html-label-text">p </span><span class="html-attribute-text">class</span><span>=</span><span class="html-variable-text">"ocultar"</span><span>&gt;</span><br>
+                <span class="tabulation1"> Adios!!! </span><br>
+                <span class="tabulation0"></span><span class="tabulation0">&lt;/</span><span class="html-label-text">p </span><span>&gt;</span>
+
+            </div>
+
+            <div class="code-block-tab js-tab-2">
+                <span class="tabulation0 js-declare-text">function </span><span class="js-name-text">funcionOcultar</span><span class="js-hooks-text">() {</span><br>
+                <span class="tabulation1 js-declare-text">var </span><span class="js-name-text">x</span><span> = </span><span class="js-variable-text">document</span><span>.</span><span class="js-method-text">getElementsByClassName</span><span class="js-hooks-text">(</span><span class="js-string-text">"ocultar"</span><span class="js-hooks-text">)</span><span>;</span><br>
+                <span class="tabulation1 js-conditional-text">for</span><span class="js-hooks-text">(</span><span class="js-declare-text">var</span><span class="js-name-text"> i</span><span> = </span><span class="js-value-text">0</span><span>; </span><span class="js-name-text">i</span><span> &lt; </span><span class="js-name-text">x</span><span>.</span><span class="js-method-text">length</span><span>; </span><span class="js-name-text">i</span><span>++</span><span class="js-hooks-text">) {</span><br>
+                <span class="tabulation2 js-name-text">x</span><span class="js-hooks-text">[</span><span class="js-name-text">i</span><span class="js-hooks-text">]</span><span>.</span><span class="js-method-text">style</span><span>.</span><span class="js-method-text">display</span><span> = </span><span class="js-string-text">"none"</span><span>;</span><br>
+                <span class="tabulation1 js-hooks-text">}</span><br>
+                <span class="tabulation0 js-hooks-text">}</span><br>
+            </div>
+            <br>
+            <button onclick="funcionOcultar()">Ocultar elementos</button>
+            <p class="ocultar">Adios!!!</p>
+        </div>
+    </div>   
+    <hr>
+    <div> <!--Clases multiples-->
+        <h2 id="5">Clases múltiples</h2>
+        <p>Los elementos HTML pueden contener mas de una clase.</p>
+        <p>Para definir más de una clase, se separan los nombres de las clases con un espacio. El elemento definido de esta forma tomara las propiedades de cada una de las clases a las que pertenezca.</p>
+        <div class="code-block">
+            <span class="tabulation0">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span><span>=</span><span class="html-variable-text">"cubo brillante"</span><span>&gt;</span><br>
+        </div>
+        
+    </div> 
+    <hr>
+    <div> <!--Sumario-->
+        <h2 id="6">Sumario</h2>
+        <ul>
+            <li>El atributo class especifica uno o más nombres de clases para un elemento</li>
+            <li>Las clases se usan en CSS y JavaScript para seleccionar y acceder a elementos especificos</li>
+            <li>El atributo class se puede usar en cualquier elemento HTML</li>
+            <li>El nombre de la clase es sensible a mayusculas</li>
+            <li>Distintos elementos HTML pueden compartir la misma clase</li>
+            <li>JavaScript puede acceder a los elementos con el nombre de la clase con el metodo <b>getElementsByClassName()</b></li>
+        </ul>
+    </div>
+
+
+    <script> pulsador(); </script>
+    <script> includeHTML(); </script>
+
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+/*************************************************************************************************/
+/* PAANEL INTERACTIVO */
+/*************************************************************************************************/
+.iteractive-panel{
+    display: grid;
+    grid-template-rows: repeat(14, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    background-color:lightgray;
+    border: thin black solid;
+    border-radius: 0.2em;
+    padding: 0.5em;
+}
+.title-panel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 1 / 6;
+    grid-row: 1;
+    font-size: 2em;
+    font-family:'Times New Roman', Times, serif;
+    border-bottom: thin gray solid;
+}
+.button-panel{
+    grid-column: 1 / 6;
+    grid-row: 2 / 11;
+    overflow-y: scroll;
+    max-height: 20em;
+    padding-top: 0.5em;
+ }
+.view-panel{
+    background-color: black;
+    grid-column: 6 / 13;
+    grid-row: 1 / 11;
+    border:thick black solid;
+    max-height: 21.6em;
+}
+.description-panel{
+    border: thin black solid;
+    grid-column: 1 / 13;
+    grid-row: 11 / 15;
+    padding: 1em;
+    background-color: rgba(255,255,255,0.7);
+}
+.item-button{
+    text-align: left;
+    width: 98%;
+    margin: 0.1em 0;
+    height: 4em;
+}
+/*************************************************************************************************/
+/* BACKGROUND-PROPETIES */
+/*************************************************************************************************/
+.background-color-1{
+    background-color: darkgreen;
+}
+.background-image-none{
+    background-image: none;
+}
+.background-image-url{
+    background-image: url(../../Image/Bg-imagen-de-ejemplo.png);
+}
+.background-image-linear-gradient-1{
+    background-image: linear-gradient(red, green, blue);
+}
+.background-image-linear-gradient-2{
+    background-image: linear-gradient(20deg, red, green, blue);
+}
+.background-image-linear-gradient-3{
+    background-image: linear-gradient(20deg, red 20%, green 40% 60%, blue 80%);
+}
+.background-image-repeating-linear-gradient-1{
+    background-image:repeating-linear-gradient(20deg, red 0 1%, green 16% 17% , blue 32% 33.3%);
+}
+.background-image-repeating-linear-gradient-2{
+    background-image:repeating-linear-gradient(20deg, red 0, green 11%, blue 22%, red 33.3%);
+}
+.background-image-radial-gradient-1{
+    background-image: radial-gradient(red, green, blue);
+}
+.background-image-radial-gradient-2{
+    background-image: radial-gradient(circle, red, green, blue);
+}
+.background-image-radial-gradient-3{
+    background-image: radial-gradient(circle closest-side at 80% 20%, red 0, green 50%, blue 100%);
+}
+.background-image-repeating-radial-gradient-1{
+    background-image: repeating-radial-gradient(circle closest-side at 10% 90%, red, green 60%, blue 120%, red 180%);
+}
+.background-image-conic-gradient-1{
+    background-image: conic-gradient(red, green, blue);
+}
+.background-image-conic-gradient-2{
+    background-image: conic-gradient(red, green 33%, blue 66%, red );
+}
+.background-image-multi-1{
+    background-image: url(../../Image/Bg-imagen-de-ejemplo.png), radial-gradient(circle, red, green, blue);
+}
+.background-image-multi-2{
+    background-image: radial-gradient(circle, rgba(255,0,0,0.3), rgba(0,255,0,0.1), rgba(0,0,255,0.3)), url(../../Image/Bg-imagen-de-ejemplo.png);
+}
+.background-clip{
+    border: 1em black dashed;
+    background-color:lightseagreen;
+    padding: 3em;
+}
+.background-clip-border-box-1{ 
+    background-clip: border-box; 
+}
+.background-clip-padding-box-1{ 
+    background-clip: padding-box; 
+}
+.background-clip-content-box-1{ 
+    background-clip: content-box; 
+}
+.background-repeat{
+    background-image: url(../../Image/Palanca-de-juego.png);
+    background-size: 33% 33%;
+}
+.background-repeat-repeat-1{
+    background-repeat: repeat;
+}
+.background-repeat-repeat-x-1{
+    background-repeat: repeat-x;
+}
+.background-repeat-repeat-y-1{
+    background-repeat: repeat-y;
+}
+.background-repeat-space-1{
+    background-repeat: space;
+}
+.background-repeat-space-2{
+    background-size: 46% 30%;
+    background-repeat: space;
+}
+.background-repeat-space-3{
+    background-size: 150% 150%;
+    background-repeat: space;
+}
+.background-repeat-round-1{
+    background-repeat: round;
+}
+.background-repeat-round-2{
+    background-size: 25% 25%;
+    background-repeat: round;
+}
+.background-repeat-no-repeat-1{
+    background-repeat: no-repeat;
+}
+.background-position{
+    background-image: url(../../Image/Palanca-de-juego.png);
+    background-size: 33% 33%;
+}
+.background-position-top-1{
+    background-position:top;
+}
+.background-position-botton-1{
+    background-position:bottom;
+}
+.background-position-left-1{
+    background-position:left;
+}
+.background-position-right-1{
+    background-position:right;
+}
+.background-position-center-1{
+    background-position:center;
+}
+.background-position-x-y-1{
+    background-position:30% 70%;
+}
+.background-size{
+    background-image: url(../../Image/Palanca-de-juego.png);
+}
+.background-size-auto-1{
+    background-size: auto;
+}
+.background-size-cover-1{
+    background-size:cover;
+}
+.background-size-contain-1{
+    background-size:contain;
+}
+.background-size-manual-1{
+    background-size: 50%;
+}
+.background-size-manual-2{
+    background-size: 200px 200px;
+}
+.background-attachment{
+    background-image: url(../../Image/Palanca-de-juego.png);
+    overflow-y: scroll;
+}
+.background-attachment-scroll-1{
+    background-attachment: scroll;
+}
+.background-attachment-fixed-1{
+    background-attachment: fixed;
+}
+.background-attachment-local-1{
+    background-attachment: local;
+}
+.background-origin{
+    border: 1em black dashed;
+    background-color:darkgreen;
+    background-image: url(../../Image/Palanca-de-juego.png);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    padding: 3em;
+}
+.background-origin-border-box-1{
+    background-origin: border-box;
+}
+.background-origin-padding-box-1{
+    background-origin: padding-box;    
+}
+.background-origin-content-box-1{
+    background-origin: content-box;
+}
+.background-blend-mode{    
+    background-color: rgba(0,0,0,0);
+    background-repeat: no-repeat, no-repeat;
+    background-image: url(../../Image/programmer.jpeg), url(../../Image/sad-cat.jpg);
+    background-size:100%,100% 100%;
+    background-position: center, center;
+}
+.background-blend-mode-normal-1{
+    background-blend-mode: normal;
+}
+.background-blend-mode-multiply-1{
+    background-blend-mode: multiply;
+}
+.background-blend-mode-screen-1{
+    background-blend-mode: screen;
+}
+.background-blend-mode-overlay-1{
+    background-blend-mode: overlay;
+}
+.background-blend-mode-darken-1{
+    background-blend-mode: darken;
+}
+.background-blend-mode-lighten-1{
+    background-blend-mode: lighten;
+}
+.background-blend-mode-color-dodge-1{
+    background-blend-mode: color-dodge;
+}
+.background-blend-mode-color-burn-1{
+    background-blend-mode: color-burn;
+}
+.background-blend-mode-hard-light-1{
+    background-blend-mode: hard-light;
+}
+.background-blend-mode-soft-light-1{
+    background-blend-mode: soft-light;
+}
+.background-blend-mode-difference-1{
+    background-blend-mode: difference;
+}
+.background-blend-mode-exclusion-1{
+    background-blend-mode: exclusion;
+}
+.background-blend-mode-hue-1{
+    background-blend-mode: hue;
+}
+.background-blend-mode-saturation-1{
+    background-blend-mode: saturation;
+}
+.background-blend-mode-color-1{
+    background-blend-mode: color;
+}
+.background-blend-mode-luminosity-1{
+    background-blend-mode: luminosity;
+}
+.background-1{
+    /*background: rgba(255,0,0,0.7), url(../../Image/sad-cat.jpg), border-box, no-repeat, center;*/
+    background:linear-gradient(45deg, rgba(255,0,0,0.6),rgba(0,0,0,0.6)),url(../../Image/dog-cheems.png) no-repeat center/60% border-box;
+}

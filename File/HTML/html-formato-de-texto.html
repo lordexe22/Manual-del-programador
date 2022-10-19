@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+    <title>Manual del programador/html/formato-de-texto</title>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-html.html"></div> <!--Reciclamos el nav de nav-html.html-->
+
+
+    <h1 id="titulo">Formato de texto</h1>
+    <hr>
+
+    <div> <!--Contenido-->
+        <h2 id="0">Contenido</h2>
+        <ul>
+            <li><a href="#1">Elementos de formato</a></li>
+            <li><a href="#2">Notas</a></li>
+        </ul>
+
+    </div>
+    <hr>
+    <div> <!--Elementos de formato-->
+        <h2 id="1">Elementos de formato</h2>
+
+        <p>HTML contiene varios elementos para definir distintos tipos de texto on un significado especial.</p>
+        <p>Los elementos de formato fueron diseñados para mostrar tipos especiales de texto, estos son:</p>
+        
+        <span>&lt;</span><span class="html-label-text">b</span><span>&gt;</span>
+        <span> - Define texto en negrita (bold) sin importancia alguna.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <b>texto con &lt;b&gt;</b></p>
+        </div>
+        <br>
+
+        <span>&lt;</span><span class="html-label-text">strong</span><span>&gt;</span>
+        <span> - Define un tipo de texto con una importancia relevante. El texto se visualizara en negrita.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <strong>texto con &lt;strong&gt;</strong></p>
+        </div>
+        <br>
+
+        <span>&lt;</span><span class="html-label-text">i</span><span>&gt;</span>
+        <span> - Define texto en cursiva (italic). Se usa usualmente para indicar terminos técnicos una frase en otro idioma, un pensamiento, etc.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <i>texto con &lt;i&gt;</i></p>
+        </div>
+        <br>
+
+        <span>&lt;</span><span class="html-label-text">em</span><span>&gt;</span>
+        <span> - Define texto enfatizado. El contenido se mostrará tipicamente en italic. La posición de este elemento en una oración y las palabras que encierra son importantes para la interpretación de su significado. Sin embargo, no confiere importancia a su contenido.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <em>texto con &lt;em&gt;</em></p>
+        </div>
+        <br>
+
+        
+        <span>&lt;</span><span class="html-label-text">mark</span><span>&gt;</span>
+        <span> - Define texto que debe ser marcado o resaltado. El contenido se mostrará resaltado con un fondo amarillo. Representa un texto marcado o resaltado como referencia o anotación, debido a su relevancia o importancia en un contexto particular.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <mark>texto con &lt;mark&gt;</mark></p>
+        </div>
+        <br>
+
+        <span>&lt;</span><span class="html-label-text">small</span><span>&gt;</span>
+        <span> - Define texto pequeño. Este elemento es reutilizado para representar comentarios laterales y letra pequeña, incluyendo derechos de autor y texto legal, independientemente de su estilo de presentación.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <small>texto con &lt;small&gt;</small></p>
+        </div>
+        <br>
+
+        <span>&lt;</span><span class="html-label-text">del</span><span>&gt;</span>
+        <span> - Define texto borrado. Marca las partes de un texto o documento que han sido suprimidas o sustituidas. Se visualizara con una linea horizontal tachando el contenido.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <del>texto con &lt;del&gt;</del></p>
+        </div>
+        <br>
+  
+        <span>&lt;</span><span class="html-label-text">ins</span><span>&gt;</span>
+        <span> - Define texto insertado. Marca las partes de un texto que han sido añadidos al documento. Se visualizara con una linea horizontal subrayando el contenido.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <ins>texto con &lt;ins&gt;</ins></p>
+        </div>
+        <br>
+
+        <span>&lt;</span><span class="html-label-text">sub</span><span>&gt;</span>
+        <span> - Representa un texto de subindice. Se usa en fragmentos de texto que por razones tipográficas deben visualizarse por debajo y en tamaño más pequeño que la fuente normal de texto. Se puede usar en la escritura de fórmulas.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <sub>texto con &lt;sub&gt;</sub></p>
+        </div>
+        <br>
+
+        <span>&lt;</span><span class="html-label-text">sup</span><span>&gt;</span>
+        <span> - Representa un texto de superindice. Se usa en fragmentos de texto que por razones tipográficas deben visualizarse por encima y en tamaño más pequeño que la fuente normal de texto. Se puede usar en la escritura de fórmulas.</span><br><br>
+        <div class="code-block">
+            <p>Texto normal - <sup>texto con &lt;sup&gt;</sup></p>
+        </div>
+        <br>
+    </div>
+    <hr>
+    <div> <!--Notas-->
+        <h2 id="2">Notas</h2>
+        <p>Bajo ninguna circunstancia se debe buscar dar estilos al contenido de la página web con estas etiquetas de formato de texto Las mismas deben usarse para darle estructura al contenido de la página, pero nunca para darle estilo, para eso se usa CSS.</p>
+    </div>
+
+
+
+<!-- 
+  
+    <sub> - Subscript text
+    <sup> - Superscript text
+
+ -->
+
+
+    <script> includeHTML(); </script>
+
+
+</body>
+</html>
