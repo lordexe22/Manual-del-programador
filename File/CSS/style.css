@@ -254,6 +254,9 @@ input.radio-tab:checked + label.radio-tab{
     border:var(--border-code-block); 
     padding: 1em;
     font-family: monospace;
+    max-height: 20em;
+    min-height: 5em;
+    overflow-y: scroll;
 }
 .good-code{
     background-color:lightgreen ;
@@ -266,28 +269,29 @@ input.radio-tab:checked + label.radio-tab{
 /*************************************************************************************************/
 /* TEXTOS DE CODIGO */
 /*************************************************************************************************/
-.html-comment-text{ color: dargreen; }
+.html-comment-text{ color: darkgreen; }
 .html-label-text{ color:darkblue; }
 .html-attribute-text{ color:firebrick; }
 .html-variable-text{ color:purple; }
 .html-value-text{ color:dodgerblue; }
 
 .css-comment-text{ color: darkgreen; }
-.css-body-text{ color:darkred; }
-.css-attribute-text{ color:firebrick; }
+.css-body-text{ color:chocolate; }
+.css-attribute-text{ color:steelblue; }
 .css-variable-text{ color:firebrick; font-weight: bold;}
-.css-value-text{ color:dodgerblue; }
+.css-value-text{ color:darkblue; }
 .css-hooks-text{ color:crimson; }
+.css-function-text{ color:blueviolet; }
 
-.js-comment-text{ color: darkgreen; font-weight: bold; }
+.js-comment-text{ color: rgb(1, 138, 1); font-weight: bold; }
 .js-declare-text{ color:darkblue; font-weight: bold; }
-.js-method-text{ color:olivedrab; }
-.js-name-text{ color:rgb(0, 63, 63); font-weight: bold; }
-.js-variable-text{ color:purple; }
+.js-method-text{ color:olivedrab;  font-weight: bold;  }
+.js-name-text{ color:rgb(1, 105, 105); font-weight: bold; }
+.js-variable-text{ color:purple;  font-weight: bold; }
 .js-value-text{ color:dodgerblue; font-weight: bold;}
-.js-conditional-text{ color:blueviolet; }
+.js-conditional-text{ color:blueviolet;  font-weight: bold; }
 .js-string-text{ color:chocolate; font-weight: bold; }
-.js-hooks-text{ color:crimson; }
+.js-hooks-text{ color:crimson;  font-weight: bold; }
 
 /*************************************************************************************************/
 /* ESPECIALES */
@@ -299,4 +303,144 @@ input.radio-tab:checked + label.radio-tab{
     padding: 1em;
     background-color:lightgoldenrodyellow;
 
+}
+
+/************************************************************************************************************
+PANEL INTERACTIVO
+************************************************************************************************************/
+.grid-container-iteractive-panel{
+    display: grid;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    background-color: lightsteelblue;
+    border: thin black solid;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 33em;
+}
+.grid-item-theme-panel{
+    background-color:rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);
+    grid-column: 1 / 8;
+    grid-row: 1 / 2;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+.grid-item-options-panel{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);
+    grid-column: 8 / 17;
+    grid-row: 13 / 17;
+    overflow-y: scroll;
+
+    display: grid;
+    border-radius: 5px;
+    grid-template-columns: 33% 33% 33%;    
+    grid-template-rows:repeat(50, 1fr);
+}
+ .grid-item-view-panel{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);
+    grid-column: 1 / 8;
+    grid-row: 2 / 13;
+    border-radius: 5px;
+    /*overflow-y: scroll;*/
+}
+.grid-item-code-panel{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);
+    grid-column: 8 / 17;
+    grid-row: 1 / 13;
+    border-radius: 5px;
+    padding: 1em;
+    overflow-y: scroll;
+
+    display: grid;
+    grid-template-rows: 10% 90%;
+}
+.grid-item-description-panel{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);
+    grid-column: 1 / 8;
+    grid-row: 13 / 17;
+    border-radius: 5px;
+    overflow-y: scroll;
+    padding: 0.5em;
+}
+.grid-theme-selector{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: none;
+    width: 100%;
+    height: 95%;
+    margin-bottom: 6px;
+    font-size: 0.8em;
+    /*text-align: center;*/
+}
+ .rb{
+   display: none;
+}
+.rb + label {
+    padding: 3% 10%;
+}
+ .rb:checked + label {
+    color: red;
+    font-weight: bolder;
+}
+.rb:hover + label {
+    transition: all 0.3s;
+    color: blue;
+    font-weight: bolder;
+}
+
+.experimental + label{
+    color:green;    
+}
+.pendiente + label, .experimental-pendiente + label{
+    color: purple;
+}
+.experimental + label::after{
+    content: " 🧪";
+}
+.pendiente + label::after{
+    content: " 🥴";
+}
+.experimental-pendiente + label::after{
+    content: " 🧪🥴";
+}
+.grid-item-options-panel * + label{
+    height: 1.2em;
+    max-height: 1.2em;
+    align-self: baseline;
+    justify-self: left;
+} 
+.code-selector{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    border-bottom: medium solid rgba(100, 100, 130, 0.6);
+}
+.rb-code{
+    display: none;
+}
+.rb-code + label{
+    text-align: center;
+}
+.rb-code + label:hover{
+    transition: all 0.3s;
+    color: blue;
+    font-weight: bolder;
+}
+.rb-code:checked + label{
+    color: red;
+    font-weight: bolder;
+}
+.code-display{
+    padding: 2% 2%;
+}
+
+.pruebas{
+    display: flex;
+ /*   height: m;
+*/
 }

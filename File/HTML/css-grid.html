@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/css-grid.css">
+
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+
+
+    <title>Manual del programador/css/css-grid</title>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-css.html"></div> <!--Reciclamos el nav de nav-html.html-->
+
+    <h1 id="titulo">CSS-grid</h1>
+    <hr>
+    <div> <!--Contenido-->
+        <h2 id="0">Contenido</h2>
+        <ul>
+            <li><a href="#1">Introducción</a></li>
+            <li><a href="#2">Funcionamiento básico</a></li>
+            <li><a href="#3">Filas, columnas y brechas</a></li>
+        </ul>
+        <hr>
+    </div>
+    <div> <!--Introducción-->
+        <h2 id="1">Introducción</h2>
+        <p>El diseño mediante el módulo CSS Grid ofrece un sistema de diseño basado en cuadriculas con filas y columnas, facilitando el diseño de la estructura de una página web al no necesitar usar float y posicionar los elementos en la página.</p><hr>
+    </div>
+    <div> <!--Funcionamiento básico-->
+        <h2 id="2">Funcionamiento básico</h2>
+        <p>Un diseño basado en cuadriculas se compone de un elemento padre con uno o más elementos hijos emparentados al mismo. En el siguiente ejemplo se crea un contenedor a partir de un elemento <b>div</b> al que se le asigna la clase <b>grid-container</b> y dentro del mismo, asignamos los hijos a partir de más elementos <b>div</b> a los cuales se les asigna la clase <b>grid-item</b>.</p>
+        <p>El elemento padre debe tener la propiedad display configurada como grid (para comportarse como un elemento en bloque) o en inline-grid (para comportarse como un elemento inline), con esto los elementos hijos directos del contenedor se convertiran automaticamente en grid items. Recordemos que los elementos en bloque buscarán ocupar todo el ancho disponible en la pantalla y provocarán saltos de línea, mientras que los elementos inline ocupan solo el ancho necesario según el contenido del mismo y no provocan saltos de línea.</p>
+        
+        <input type="radio" name="tab-1" id="html-tab-1" class="radio-tab" checked>
+        <label for="html-tab-1" class="radio-tab">HTML</label>
+
+        <input type="radio" name="tab-1" id="css-tab-1" class="radio-tab">
+        <label for="css-tab-1" class="radio-tab">CSS</label>    
+
+        <div class="code-block-tab html-tab-1"><b>
+            &lt;<span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-container"</span>&gt;<br>
+
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;1&lt;/<span class="html-label-text">div</span>&gt;<br>      
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;2&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;3&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;4&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;5&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;6&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;7&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;8&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;9&lt;/<span class="html-label-text">div</span>&gt;<br>
+
+            &lt;/<span class="html-label-text">div</span>&gt;
+        </b></div>
+        <div class="code-block-tab css-tab-1"><b>
+            <span class="css-body-text">.grid-container</span> {<br>
+
+                <span class="tabulation1 css-attribute-text">display</span>: <span class="css-variable-text">grid</span>;<br>
+    
+                <span class="tabulation1 css-attribute-text">grid-template-columns</span>: <span class="css-variable-text">auto auto auto</span>; <span class="css-comment-text">/* Delimita 3 columnas y asigna en auto el ancho de las mismas*/</span><br>
+    
+                <span class="tabulation1 css-attribute-text">background-color</span>: <span class="css-variable-text">#2196F3</span>;<br>
+    
+                <span class="tabulation1 css-attribute-text">padding</span>: <span class="css-value-text">10px</span>;<br>} <br>
+
+                <span class="css-body-text">.grid-item</span> {<br>
+
+                <span class="tabulation1 css-attribute-text">background-color</span>:<span class="css-variable-text">white</span>;<br>
+    
+                <span class="tabulation1 css-attribute-text">border</span>: <span class="css-value-text">1px </span><span class="css-variable-text">solid black</span>;<br>
+    
+                <span class="tabulation1 css-attribute-text">padding</span>: <span class="css-value-text">5px</span>;<br>
+                
+                <span class="tabulation1 css-attribute-text">font-size</span>: <span class="css-value-text">15px</span>;<br>
+                
+                <span class="tabulation1 css-attribute-text">text-align</span>: <span class="css-variable-text">center</span>;<br>}
+        </b></div>
+        <br>
+        <div class="grid-container">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>  
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>  
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>  
+        </div>
+
+        <br>
+
+        <input type="radio" name="tab-2" id="html-tab-2" class="radio-tab" checked>
+        <label for="html-tab-2" class="radio-tab">HTML</label>
+
+        <input type="radio" name="tab-2" id="css-tab-2" class="radio-tab">
+        <label for="css-tab-2" class="radio-tab">CSS</label>  
+
+        <div class="code-block-tab html-tab-2"><b>
+            &lt;<span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-container-inline"</span>&gt;<br>
+
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;1&lt;/<span class="html-label-text">div</span>&gt;<br>      
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;2&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;3&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;4&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;5&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;6&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;7&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;8&lt;/<span class="html-label-text">div</span>&gt;<br>    
+            <span class="tabulation1">&lt;</span><span class="html-label-text">div </span><span class="html-attribute-text">class</span>=<span class="html-variable-text">"grid-item"</span>&gt;9&lt;/<span class="html-label-text">div</span>&gt;<br>
+
+            &lt;/<span class="html-label-text">div</span>&gt;
+        </b></div>
+        <div class="code-block-tab css-tab-2"><b>
+            <span class="css-body-text">.grid-container-inline</span> {<br>
+
+                <span class="tabulation1 css-attribute-text">display</span>: <span class="css-variable-text">inline-grid</span>;<br>
+    
+                <span class="tabulation1 css-attribute-text">grid-template-columns</span>: <span class="css-variable-text">auto auto auto</span>; <span class="css-comment-text">/* Delimita 3 columnas y asigna en auto el ancho de las mismas*/</span><br>
+    
+                <span class="tabulation1 css-attribute-text">background-color</span>: <span class="css-variable-text">#2196F3</span>;<br>
+    
+                <span class="tabulation1 css-attribute-text">padding</span>: <span class="css-value-text">10px</span>;<br>} <br>
+
+                <span class="css-body-text">.grid-item</span> {<br>
+
+                <span class="tabulation1 css-attribute-text">background-color</span>:<span class="css-variable-text">white</span>;<br>
+    
+                <span class="tabulation1 css-attribute-text">border</span>: <span class="css-value-text">1px </span><span class="css-variable-text">solid black</span>;<br>
+    
+                <span class="tabulation1 css-attribute-text">padding</span>: <span class="css-value-text">5px</span>;<br>
+                
+                <span class="tabulation1 css-attribute-text">font-size</span>: <span class="css-value-text">15px</span>;<br>
+                
+                <span class="tabulation1 css-attribute-text">text-align</span>: <span class="css-variable-text">center</span>;<br>}
+        </b></div>
+        <br>
+        <div class="grid-container-inline">
+            <div class="grid-item">1</div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>  
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>  
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div>  
+        </div>
+        <hr>
+        
+    </div>
+    <div> <!--Filas, columnas y brechas-->
+        <h2 id="3">Filas, columnas y brechas</h2>
+        <p>Cuando se elabora un contenedor, vemos que los items del mismo estan ordenados por filas (<b>rows</b>) y columnas (<b>columns</b>), las cuales a su vez estan separadas entre si por una brecha (<b>gaps</b>), la cual se define como el espacio entre los items del contenedor.</p>
+
+        <img src="../../Image/grid_rows_columns_gaps.png" alt="caracteristicas del grid">
+
+        <p>Es posible editar el <b>gap</b> de los items. Para esto se debe usar dentro de la clase del contenedor algunas de las propiedades en el próximo ejemplo.</p>
+
+
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">gap (brechas)</div>
+            <div class="button-panel">
+                <button id="item-button-0" class="item-button"><b>row-gap</b></button><br>
+                <button id="item-button-1" class="item-button"><b>column-gap</b></button><br>
+                <button id="item-button-2" class="item-button"><b>gap</b></button><br>
+
+                
+            </div>
+            <div id="view-panel-0" class="view-panel"></div>
+            <div id="description-panel-0" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+            <div id="code-panel-0" class="code-panel"></div>
+         </div>
+
+
+
+
+
+    </div> 
+    
+
+
+    <script src="../JS/css-grid.js"></script>
+    <script> includeHTML(); </script>
+</body>
+</html>

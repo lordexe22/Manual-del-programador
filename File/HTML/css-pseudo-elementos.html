@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+
+
+    <title>Manual del programador/css/css-pseudoclass</title>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-css.html"></div> <!--Reciclamos el nav de nav-html.html-->
+
+    <h1 id="titulo">Pseudo-elementos</h1>
+    <hr>
+    <div> <!--Contenido-->
+        <h2 id="0">Contenido</h2>
+        <ul>
+           <li><a href="#t1">Introducción</a></li>
+           <li><a href="#t2">Sintaxis</a></li>
+           <li><a href="#t3">Lista de pseudo-elementos</a></li>
+        </ul>
+        <hr>
+    </div>
+    <div> <!--Introducción-->
+        <h2 id="t1">Introducción</h2>
+        <p>Los pseudo-elementos son fragmentos de código que aplicarán estilos css en fragmentos de los elementos contenidos dentro de un documento HTML.</p><hr>
+    </div>
+    <div> <!--Sintaxis-->
+        <h2 id="t2">Sintaxis</h2>
+        <p>Para usar un pseudo-elemento en CSS, luego de escribir el selector se ponen :: y a continuaciòn el nombre del pseudo-elemento de interés. En la próxima sección se listan todos los pseudo-elementos existentes.</p>
+    </div> 
+    <div> <!--Lista de pseudo-elementos-->
+        <h2 id="t3">Lista de pseudo-elementos</h2>
+        
+        <div class="grid-container-iteractive-panel">
+            <div class="grid-item-title-panel">Pseudo-elementos</div>
+            <div id="view-panel-1" class="grid-item-view-panel"></div>
+            <div id="code-panel-1" class="grid-item-code-panel"></div>
+            <div id="description-panel-1" class="grid-item-description-panel"></div>
+            <div class="grid-item-options-panel">
+                <input type="radio" name="group-1" id="rb-1" class="rb">
+                <label for="rb-1">::after</label>
+                <input type="radio" name="group-1" id="rb-2" class="rb">
+                <label for="rb-2">::backdrop</label>
+                <input type="radio" name="group-1" id="rb-3" class="rb">
+                <label for="rb-3">::before</label>
+                <input type="radio" name="group-1" id="rb-4" class="rb">
+                <label for="rb-4">::cue</label>
+                <input type="radio" name="group-1" id="rb-5" class="rb">
+                <label for="rb-5">::cue-region</label>
+                <input type="radio" name="group-1" id="rb-6" class="rb">
+                <label for="rb-6">::first-letter</label>
+                <input type="radio" name="group-1" id="rb-7" class="rb">
+                <label for="rb-7">::first-line</label>
+                <input type="radio" name="group-1" id="rb-8" class="rb">
+                <label for="rb-8">::file-selector-button</label>
+                <input type="radio" name="group-1" id="rb-9" class="rb">
+                <label for="rb-9">::grammar-error</label>
+                <input type="radio" name="group-1" id="rb-10" class="rb">
+                <label for="rb-10">::marker</label>
+                <input type="radio" name="group-1" id="rb-11" class="rb">
+                <label for="rb-11">::part()</label>
+                <input type="radio" name="group-1" id="rb-12" class="rb">
+                <label for="rb-12">::placeholder</label>
+                <input type="radio" name="group-1" id="rb-13" class="rb">
+                <label for="rb-13">::selection</label>
+                <input type="radio" name="group-1" id="rb-14" class="rb">
+                <label for="rb-14">::slotted()</label>
+                <input type="radio" name="group-1" id="rb-15" class="rb">
+                <label for="rb-15">::spelling-error</label>
+                <input type="radio" name="group-1" id="rb-16" class="rb">
+                <label for="rb-16">::target-text</label>
+  
+     
+            </div>
+        </div>
+
+    </div> 
+    
+    <script src="../JS/css-pseudo-elementos.js"></script>
+    <script> includeHTML(); </script>
+</body>
+</html>
+
+

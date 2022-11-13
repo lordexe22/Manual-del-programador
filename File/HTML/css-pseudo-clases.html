@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+
+
+    <title>Manual del programador/css/css-pseudoclass</title>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-css.html"></div> <!--Reciclamos el nav de nav-html.html-->
+
+    <h1 id="titulo">Pseudo-clases</h1>
+    <hr>
+    <div> <!--Contenido-->
+        <h2 id="0">Contenido</h2>
+        <ul>
+           <li><a href="#t1">Introducción</a></li>
+           <li><a href="#t2">Sintaxis</a></li>
+           <li><a href="#t3">Lista de pseudo-clases</a></li>
+
+        </ul>
+        <hr>
+    </div>
+    <div> <!--Introducción-->
+        <h2 id="t1">Introducción</h2>
+        <p>Las pseudo-clases son fragmentos de código que aplicarán estilos css en un momento o bajo acciones concretas.</p><hr>
+    </div>
+    <div> <!--Sintaxis-->
+        <h2 id="t2">Sintaxis</h2>
+        <p>Para usar una pseudo clase en CSS, luego de escribir el selector se ponen : y a continuaciòn el nombre de la pseudo clase de interés. En la próxima sección se listan todas las pseudo-clases existentes.</p>
+    </div> 
+    <div> <!--Lista de pseudo-clases-->
+        <h2 id="t3">Lista de pseudo-clases</h2>
+        
+        <div class="grid-container-iteractive-panel">
+            <div class="grid-item-title-panel">Pseudo-clases</div>
+            <div id="view-panel-1" class="grid-item-view-panel"></div>
+            <div id="code-panel-1" class="grid-item-code-panel"></div>
+            <div id="description-panel-1" class="grid-item-description-panel"></div>
+            <div class="grid-item-options-panel">
+                <input type="radio" name="group-1" id="rb-1" class="rb">
+                <label for="rb-1">:active</label>
+                <input type="radio" name="group-1" id="rb-2" class="rb">
+                <label for="rb-2">:any-link</label>
+                <input type="radio" name="group-1" id="rb-3" class="rb">
+                <label for="rb-3">:autofill</label>
+                <input type="radio" name="group-1" id="rb-5" class="rb">
+                <label for="rb-5">:checked</label>
+                <input type="radio" name="group-1" id="rb-7" class="rb">
+                <label for="rb-7">:default</label>
+                <input type="radio" name="group-1" id="rb-10" class="rb">
+                <label for="rb-10">:disabled</label>
+                <input type="radio" name="group-1" id="rb-11" class="rb">
+                <label for="rb-11">:empty</label>
+                <input type="radio" name="group-1" id="rb-12" class="rb">
+                <label for="rb-12">:enabled</label>
+                <input type="radio" name="group-1" id="rb-14" class="rb">
+                <label for="rb-14">:first-child</label>
+                <input type="radio" name="group-1" id="rb-15" class="rb">
+                <label for="rb-15">:first-of-type</label>
+                <input type="radio" name="group-1" id="rb-16" class="rb">
+                <label for="rb-16">:focus</label>
+                <input type="radio" name="group-1" id="rb-17" class="rb">
+                <label for="rb-17">:focus-visible</label>
+                <input type="radio" name="group-1" id="rb-18" class="rb">
+                <label for="rb-18">:focus-within</label>
+                <input type="radio" name="group-1" id="rb-25" class="rb">
+                <label for="rb-25">:hover</label>
+                <input type="radio" name="group-1" id="rb-27" class="rb">
+                <label for="rb-27">:in-range</label>
+                <input type="radio" name="group-1" id="rb-28" class="rb">
+                <label for="rb-28">:invalid</label>
+                <input type="radio" name="group-1" id="rb-29" class="rb">
+                <label for="rb-29">:is()</label>
+                <input type="radio" name="group-1" id="rb-30" class="rb">
+                <label for="rb-30">:lang()</label>
+                <input type="radio" name="group-1" id="rb-31" class="rb">
+                <label for="rb-31">:last-child</label>
+                <input type="radio" name="group-1" id="rb-32" class="rb">
+                <label for="rb-32">:last-of-type</label>
+                <input type="radio" name="group-1" id="rb-34" class="rb">
+                <label for="rb-34">:link</label>
+                <input type="radio" name="group-1" id="rb-37" class="rb">
+                <label for="rb-37">:not()</label>
+                <input type="radio" name="group-1" id="rb-38" class="rb">
+                <label for="rb-38">:nth-child()</label>
+                <input type="radio" name="group-1" id="rb-40" class="rb">
+                <label for="rb-40">:nth-last-child()</label>
+                <input type="radio" name="group-1" id="rb-42" class="rb">
+                <label for="rb-42">:nth-last-of-type()</label>
+                <input type="radio" name="group-1" id="rb-43" class="rb">
+                <label for="rb-43">:nth-of-type()</label>
+                <input type="radio" name="group-1" id="rb-44" class="rb">
+                <label for="rb-44">:only-child</label>
+                <input type="radio" name="group-1" id="rb-45" class="rb">
+                <label for="rb-45">:only-of-type</label>
+                <input type="radio" name="group-1" id="rb-46" class="rb">
+                <label for="rb-46">:optional</label>
+                <input type="radio" name="group-1" id="rb-47" class="rb">
+                <label for="rb-47">:out-of-range</label>
+                <input type="radio" name="group-1" id="rb-50" class="rb">
+                <label for="rb-50">:placeholder-shown</label>
+                <input type="radio" name="group-1" id="rb-53" class="rb">
+                <label for="rb-53">:read-only</label>
+                <input type="radio" name="group-1" id="rb-54" class="rb">
+                <label for="rb-54">:read-write</label>
+                <input type="radio" name="group-1" id="rb-55" class="rb">
+                <label for="rb-55">:required</label>
+                <input type="radio" name="group-1" id="rb-57" class="rb">
+                <label for="rb-57">:root</label>
+                <input type="radio" name="group-1" id="rb-59" class="rb">
+                <label for="rb-59">:target</label>
+                <input type="radio" name="group-1" id="rb-60" class="rb">
+                <label for="rb-60">:target-within</label>
+                <input type="radio" name="group-1" id="rb-62" class="rb">
+                <label for="rb-62">:valid</label>
+                <input type="radio" name="group-1" id="rb-63" class="rb">
+                <label for="rb-63">:visited</label>
+
+                <input type="radio" name="group-1" id="rb-4" class="rb experimental-pendiente">
+                <label for="rb-4">:blank</label>
+                <input type="radio" name="group-1" id="rb-6" class="rb experimental-pendiente">
+                <label for="rb-6">:current</label>
+                <input type="radio" name="group-1" id="rb-8" class="rb pendiente">
+                <label for="rb-8">:defined</label>
+                <input type="radio" name="group-1" id="rb-9" class="rb experimental-pendiente">
+                <label for="rb-9">:dir()</label>
+                <input type="radio" name="group-1" id="rb-13" class="rb pendiente">
+                <label for="rb-13">:first</label>
+                <input type="radio" name="group-1" id="rb-19" class="rb pendiente">
+                <label for="rb-19">:fullscreen</label>
+                <input type="radio" name="group-1" id="rb-20" class="rb experimental-pendiente">
+                <label for="rb-20">:future</label>
+                <input type="radio" name="group-1" id="rb-21" class="rb experimental-pendiente">
+                <label for="rb-21">:has()</label>
+                <input type="radio" name="group-1" id="rb-22" class="rb pendiente">
+                <label for="rb-22">:host</label>
+                <input type="radio" name="group-1" id="rb-23" class="rb pendiente">
+                <label for="rb-23">:host()</label>
+                <input type="radio" name="group-1" id="rb-24" class="rb experimental-pendiente">
+                <label for="rb-24">:host-context()</label>
+                <input type="radio" name="group-1" id="rb-26" class="rb pendiente">
+                <label for="rb-26">:indeterminate</label>
+                <input type="radio" name="group-1" id="rb-33" class="rb pendiente">
+                <label for="rb-33">:left</label>
+                <input type="radio" name="group-1" id="rb-35" class="rb experimental-pendiente">
+                <label for="rb-35">:local-link</label>
+                <input type="radio" name="group-1" id="rb-36" class="rb pendiente">
+                <label for="rb-36">:modal</label>            
+                <input type="radio" name="group-1" id="rb-39" class="rb experimental-pendiente">
+                <label for="rb-39">:nth-col()</label>
+                <input type="radio" name="group-1" id="rb-48" class="rb experimental-pendiente">
+                <label for="rb-48">:past</label>
+                <input type="radio" name="group-1" id="rb-49" class="rb pendiente">
+                <label for="rb-49">:picture-in-picture</label>
+                <input type="radio" name="group-1" id="rb-41" class="rb experimental-pendiente">
+                <label for="rb-41">:nth-last-col()</label>
+                <input type="radio" name="group-1" id="rb-51" class="rb pendiente">
+                <label for="rb-51">:paused</label>
+                <input type="radio" name="group-1" id="rb-52" class="rb pendiente">
+                <label for="rb-52">:playing</label>
+                <input type="radio" name="group-1" id="rb-56" class="rb pendiente">
+                <label for="rb-56">:right</label>
+                <input type="radio" name="group-1" id="rb-58" class="rb pendiente">
+                <label for="rb-58">:scope</label>
+                <input type="radio" name="group-1" id="rb-61" class="rb experimental-pendiente">
+                <label for="rb-61">:user-invalid</label>
+                <input type="radio" name="group-1" id="rb-64" class="rb pendiente">
+                <label for="rb-64">:where()</label>
+
+
+            </div>
+        </div>
+
+    </div> 
+    
+    <script src="../JS/css-pseudo-clases.js"></script>
+    <script> includeHTML(); </script>
+</body>
+</html>
+

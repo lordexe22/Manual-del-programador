@@ -1,316 +1,81 @@
-/*************************************************************************************************/
-/* AJUSTES GLOBALES */
-/*************************************************************************************************/
-:root{
-    color: black;
-    scroll-behavior: smooth;
-    margin-top: 4.5em;
-    margin-left: 16em;
-    margin-right: 2em ;
-
-    /* Margen en top para que el header no tape el contenido inicial*/
-    margin-top: 5em;
-    /* Agrega padding para que el header no tape el contenido al usar el scroll para navegar*/
-    scroll-padding-top: 5em; 
-}
-
-/*************************************************************************************************/
-/* CONSTANTES */
-/*************************************************************************************************/
-:root {
-    /* code-block */
-    --background-code-block:rgb(230,230,230);
-    --background-code-block-dark:rgb(150,150,150);
-    --border-code-block:medium solid rgb(150,30,30);
-    --border-code-block-dark:medium solid rgb(80,30,30);
-
-    /* nav */
-    --background-nav:rgb(230,230,255);
-    --border-nav:medium solid rgb(30,30,90);
-
-    /* header */
-    --background-header:rgb(30,30,90);
-    --border-header:medium solid rgb(30,30,90);
-    --color-header:rgb(200,200,200)
-}
-
-/*************************************************************************************************/
-/* PANEL DE NAVEGACION */
-/*************************************************************************************************/
-nav{
-    overflow: scroll; /* Agrega un scroll lateral */
-    scroll-behavior: auto;
-    position:fixed;
-    background-color:var(--background-nav);
-    left: 0;
-    top: 4.35em;
-    bottom: 0;
-    width: 13em;
-    padding:1em;
-
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.8em;
-}
-
-/*************************************************************************************************/
-/* PANEL DE CABECERA (HEADER) */
-/*************************************************************************************************/
-header{
-    position:fixed;
-    background-color:var(--background-header);
-    border: var(--border-header);
-    color: var(--color-header);
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 2em;
-    padding: 1em;
-    z-index: 1;
-
-}
-
-/*************************************************************************************************/
-/* ICONOS DEL HEADER */
-/*************************************************************************************************/
-.img-html{
-    position: fixed;
-    height: 4em;
-    top: 0.2em;
-    left: 2em;
-}
-.img-css{
-    position: fixed;
-    height: 4.2em;
-    top: 0em;
-    left: 8em;
-}
-.img-js{
-    position: fixed;
-    height: 4.2em;
-    top: 0em;
-    left: 14em;
-}
-.img-scroll-up{
-    position: fixed;
-    height: 4.2em;
-    top: 0em;
-    right: 2em;
-}
-
-/*************************************************************************************************/
-/* TEXTO TABULADO */
-/*************************************************************************************************/
-.tabulation0 { padding-left: 0; }
-.tabulation1 { padding-left: 1em; }
-.tabulation2 { padding-left: 2em; }
-.tabulation3 { padding-left: 3em; }
-.tabulation4 { padding-left: 4em; }
-.tabulation5 { padding-left: 5em; }
-.tabulation6 { padding-left: 6em; }
-.tabulation7 { padding-left: 7em; }
-.tabulation8 { padding-left: 8em; }
-
-/*************************************************************************************************/
-/* BLOQUE DE CODIGO */
-/*************************************************************************************************/
-.code-block{
-    background-color:var(--background-code-block);
-    border:var(--border-code-block);
-    border-radius: 0.3em;
-    padding: 1em;
-    font-family: monospace;
-    color: black;
-}
-
-/*************************************************************************************************/
-/* BLOQUE DE CODIGO CON TABS */
-/*************************************************************************************************/
-/* Ocultamos los radio button */
-input.radio-tab{ display: none; }
-/* Mostramos las etiquetas con formato in-line */
-input.radio-tab + label.radio-tab{ display:inline; }
-/* Ocultamos los contenidos (si existen input.radio-tab y tienen hermanos div.code-block-tab, escondelos a todos)*/
-input.radio-tab ~ div.code-block-tab{ display: none; }
-/* Si el radio button esta seleccionado, mostramos el contenido de su bloque correspondiente (Soporta 20 ejemplos por página) */
-#html-tab-1:checked ~ div.html-tab-1,
-#html-tab-2:checked ~ div.html-tab-2,
-#html-tab-3:checked ~ div.html-tab-3,
-#html-tab-4:checked ~ div.html-tab-4,
-#html-tab-5:checked ~ div.html-tab-5,
-#html-tab-6:checked ~ div.html-tab-6,
-#html-tab-7:checked ~ div.html-tab-7,
-#html-tab-8:checked ~ div.html-tab-8,
-#html-tab-9:checked ~ div.html-tab-9,
-#html-tab-10:checked ~ div.html-tab-10,
-#html-tab-11:checked ~ div.html-tab-11,
-#html-tab-12:checked ~ div.html-tab-12,
-#html-tab-13:checked ~ div.html-tab-13,
-#html-tab-14:checked ~ div.html-tab-14,
-#html-tab-15:checked ~ div.html-tab-15,
-#html-tab-16:checked ~ div.html-tab-16,
-#html-tab-17:checked ~ div.html-tab-17,
-#html-tab-18:checked ~ div.html-tab-18,
-#html-tab-19:checked ~ div.html-tab-19,
-#html-tab-20:checked ~ div.html-tab-20,
-#css-tab-1:checked ~ div.css-tab-1,
-#css-tab-2:checked ~ div.css-tab-2,
-#css-tab-3:checked ~ div.css-tab-3,
-#css-tab-4:checked ~ div.css-tab-4,
-#css-tab-5:checked ~ div.css-tab-5,
-#css-tab-6:checked ~ div.css-tab-6,
-#css-tab-7:checked ~ div.css-tab-7,
-#css-tab-8:checked ~ div.css-tab-8,
-#css-tab-9:checked ~ div.css-tab-9,
-#css-tab-10:checked ~ div.css-tab-10,
-#css-tab-11:checked ~ div.css-tab-11,
-#css-tab-12:checked ~ div.css-tab-12,
-#css-tab-13:checked ~ div.css-tab-13,
-#css-tab-14:checked ~ div.css-tab-14,
-#css-tab-15:checked ~ div.css-tab-15,
-#css-tab-16:checked ~ div.css-tab-16,
-#css-tab-17:checked ~ div.css-tab-17,
-#css-tab-18:checked ~ div.css-tab-18,
-#css-tab-19:checked ~ div.css-tab-19,
-#css-tab-20:checked ~ div.css-tab-20,
-#js-tab-1:checked ~ div.js-tab-1,
-#js-tab-2:checked ~ div.js-tab-2,
-#js-tab-3:checked ~ div.js-tab-3,
-#js-tab-4:checked ~ div.js-tab-4,
-#js-tab-5:checked ~ div.js-tab-5,
-#js-tab-6:checked ~ div.js-tab-6,
-#js-tab-7:checked ~ div.js-tab-7,
-#js-tab-8:checked ~ div.js-tab-8,
-#js-tab-9:checked ~ div.js-tab-9,
-#js-tab-10:checked ~ div.js-tab-10,
-#js-tab-11:checked ~ div.js-tab-11,
-#js-tab-12:checked ~ div.js-tab-12,
-#js-tab-13:checked ~ div.js-tab-13,
-#js-tab-14:checked ~ div.js-tab-14,
-#js-tab-15:checked ~ div.js-tab-15,
-#js-tab-16:checked ~ div.js-tab-16,
-#js-tab-17:checked ~ div.js-tab-17,
-#js-tab-18:checked ~ div.js-tab-18,
-#js-tab-19:checked ~ div.js-tab-19,
-#js-tab-20:checked ~ div.js-tab-20
-{ display: block; }
-
-/* Etiqueta que no esta seleccionada */
-input.radio-tab + label.radio-tab{
-    background-color:var(--background-code-block-dark);
-    border: var(--border-code-block);
-    border-bottom: 1px solid transparent;
-    border-radius: 0.3em;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    padding: 0.2em 0.4em 0 0.4em;
-    position: relative;
-}
-/* Etiqueta que si esta seleccionada */
-input.radio-tab:checked + label.radio-tab{
-    background-color:var(--background-code-block);
-    border: var(--border-code-block);
-    border-radius: 0.3em;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    border-bottom: 0;
-    padding: 0.2em 0.4em 0.3em 0.4em;
-    position: relative;
-}
-/* Bloque de contenido */
-.code-block-tab{
-    background-color:var(--background-code-block);
-    border: var(--border-code-block);
-    border-radius: 0.3em;
-    border-top-left-radius: 0;
-    border:var(--border-code-block); 
-    padding: 1em;
-    font-family: monospace;
-}
-
-/*************************************************************************************************/
-/* TEXTOS DE CODIGO */
-/*************************************************************************************************/
-.html-comment-text{ color: darkgreen; }
-.html-label-text{ color:darkblue; }
-.html-attribute-text{ color:firebrick; }
-.html-variable-text{ color:purple; }
-.html-value-text{ color:dodgerblue; }
-
-.css-comment-text{ color: darkgreen; }
-.css-body-text{ color:darkred; }
-.css-attribute-text{ color:firebrick; }
-.css-variable-text{ color:purple; }
-.css-value-text{ color:dodgerblue; }
-.css-hooks-text{ color:crimson; }
-
-.js-comment-text{ color: darkgreen; }
-.js-declare-text{ color:darkred; }
-.js-method-text{ color:olivedrab; }
-.js-name-text{ color:darkblue; }
-.js-variable-text{ color:purple; }
-.js-value-text{ color:dodgerblue; }
-.js-conditional-text{ color:blueviolet; }
-.js-string-text{ color:peru; }
-.js-hooks-text{ color:crimson; }
-
-/*************************************************************************************************/
-/* PAANEL INTERACTIVO */
-/*************************************************************************************************/
-
-.iteractive-panel{
+.grid-container-iteractive-panel{
     display: grid;
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-columns: repeat(12, 1fr);
-    background-color: lightgray;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    background-color: lightsteelblue;
     border: thin black solid;
-    border-radius: 0.2em;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    height: 33em;
+}
+.grid-item-theme-panel{
+    background-color:rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);;
+    grid-column: 1 / 8;
+    grid-row: 1 / 2;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+.grid-item-options-panel{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);;
+    grid-column: 8 / 17;
+    grid-row: 13 / 17;
+    overflow-y: scroll;
+    display: grid;
+    border-radius: 5px;
+    grid-template-columns: 33% 33% 33%;    
+    grid-template-rows: max-content;
+}
+ .grid-item-view-panel{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);;
+    grid-column: 1 / 8;
+    grid-row: 2 / 13;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+.grid-item-code-panel{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);;
+    grid-column: 8 / 17;
+    grid-row: 1 / 13;
+    border-radius: 5px;
+    padding: 1em;
+    overflow-y: scroll;
+}
+.grid-item-description-panel{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: medium solid rgba(100, 100, 130, 0.6);;
+    grid-column: 1 / 8;
+    grid-row: 13 / 17;
+    border-radius: 5px;
+    overflow-y: scroll;
     padding: 0.5em;
 }
-.title-panel{
-    background-color: red;
-    grid-column: 1 / 6;
-    grid-row: 1;
-    text-align: center;
+.grid-theme-selector{
+    background-color: rgba(230, 230, 255, 0.8);
+    border: none;
+    width: 100%;
+    height: 95%;
+    margin-bottom: 6px;
+    font-size: 0.8em;
+    /*text-align: center;*/
 }
-.button-panel{
-    background-color: green;
-    grid-column: 1 / 6;
-    grid-row: 2 / 11;
-    overflow-y: scroll;
-    max-height: 20em;
+.rb{
+    display: none;
  }
-.view-panel{
-    background-color: yellow;
-    grid-column: 6 / 13;
-    grid-row: 1 / 11;
-    border:thick black solid;
-    height: 21.6em;
+.rb + label {
+    padding: 3% 10%;
 }
-.code-panel{
-    background-color: magenta;
-    grid-column: 1 / 13;
-    grid-row: 11 / 13;
-    padding: 1em;
-
-}
-.item-button{
-    width: 98%;
-    margin: 0.1em 1%;
-    background-color: rgba(255,0,0,0.1);
-    height: 4em;
-}
-.active-button{
-    background-color: yellow;
-}
-
-/*************************************************************************************************/
-/* ESPECIALES */
-/*************************************************************************************************/
-/* Se usa para dejar notas en el archivo */
-.note{
-    border-top: thin darkslategray solid;
-    border-bottom: thin darkslategray solid;
-    padding: 1em;
-    background-color:lightgoldenrodyellow;
-
-}
+.rb:checked + label {
+     color: red;
+     font-weight: bolder;
+ }
+.rb:hover + label {
+     transition: all 0.3s;
+     color: blue;
+     font-weight: bolder;
+ }

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/html-canvas.css">
 
     <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
 
@@ -23,20 +24,193 @@
         <h2 id="0">Contenido</h2>
         <ul>
             <li><a href="#1">Introducción</a></li>
-
-
+            <li><a href="#2">Aplicaciones</a></li>
+            <li><a href="#3">Primeros pasos</a></li>
+            <li><a href="#4">Rectangulos</a></li>
+            <li><a href="#5">Texto</a></li>         
+            <li><a href="#6">Colores, estilos y sombras</a></li>
         </ul>
 
     </div>
     <hr>
     <div> <!--Introducción-->
         <h2 id="1">Introducción</h2>
-        <p></p>
+        <p>El elemento HTML <b>canvas</b> es usado para dibujar gráficos en una página web, sobre la marcha por medio de JavaScript. El elemento <b>canvas</b> es solamente un contenedor para gráficos y se deben dibujar los mismos con JavaScript. Para esto contamos con varios metodos para dibujar lineas, cajas, circulos, texto y agregar imagenes entre otros.</p>
+
+        <p>Para crear un canvas es necesario especificar un id para poder referenciarlo con JavaScript y hay que asignarle un alto y ancho para delimitar las dimensiones sobre las cuales podremos crear el gráfico. Para poder visualizar las dimensiones del mismo podemos agregarle un borde. En el siguiente ejemplo creamos un canvas totalmente vacio.</p>
+
+        <div class="code-block">
+            &lt;<span class="html-label-text">canvas</span><span class="html-attribute-text"> id</span>=<span class="html-variable-text">"myCanvas"</span><span class="html-attribute-text"> height</span>=<span class="html-variable-text">"200px"</span> <span class="html-attribute-text"> width</span>=<span class="html-variable-text">"200px"</span> <span class="html-attribute-text"> style</span>=<span class="html-variable-text">"border thin black solid"</span>&gt;
+        </div>
+
+        <br>
+
+        <canvas id="myCanvas" width="200px" height="200px" style="border: thin black solid"></canvas>
+        
+        <p>Un canvas es un lienzo en blanco, en las siguientes secciones veremos los comandos que podemos utilizar para dibujar en ellos.</p>
+
+        <p class="note"><b>NOTA</b>: Por defecto un elemento canvas no tiene bordes ni contenido.</p>
+        <p class="note"><b>NOTA</b>: Se pueden tener varios elementos canvas en un mismo documento HTML.</p>
+
         <hr>
     </div>
+    <div> <!--Aplicaciones-->
+        <h2 id="2">Aplicaciones</h2>
+        <p>Como se menciono anteriormente un canvas es un elemento HTML que nos permite dibujar graficos en una página web usando comandos de JavaScript.</p>
+        <p>Dentro de las posibilidades que nos permite <b>canvas</b> podemos:</p>
+        <ul>
+            <li><b>Dibujas gráficos</b>: canvas tiene una gran cantidad de caracteristicas para la presentación gráfica de datos.</li>
+            <li><b>Animaciones</b>: Los objetos de canvas pueden moverse. Todo es posible, desde movimientos simples de objetos hasta animaciones complejas.</li>
+            <li><b>Interactividad</b>: canvas puede responder a eventos de JavaScript e interacciones con el usuario (teclas, mouse, botones, etc).</li>
+            <li><b>Videojuegos</b>: los metodos de animación de canvas ofrecen muchas posibilidades de desarrollo para aplicaciones de juegos.</li>
+        </ul>
+        <hr>
+    </div>
+    <div> <!--Primeros pasos-->
+        <h2 id="3">Primeros pasos</h2>
+
+        <p>El primer paso es crear en nuestro documento HTML un elemento <b>canvas</b>. En el siguiente ejemplo creamos un canvas con el id <b>canvas-1</b> y le asignamos un alto y ancho de 200px, además dibujamos un borde para poder visualizar las dimensiones del mismo.</p>
+
+        <div class="code-block">
+            &lt;<span class="html-label-text">canvas</span><span class="html-attribute-text"> id</span>=<span class="html-variable-text">"canvas-1"</span><span class="html-attribute-text"> height</span>=<span class="html-variable-text">"200px"</span> <span class="html-attribute-text"> width</span>=<span class="html-variable-text">"200px"</span> <span class="html-attribute-text"> style</span>=<span class="html-variable-text">"border: thin black solid"</span>&gt; 
+        </div>
+
+        <p>Lo segundo es referenciar a nuestro elemento <b>canvas</b> desde nuestro documento de JavaScript. Para esto creamos una variable y le asignamos una referencia hacia el elemento <b>canvas</b> mediante el método de HTML DOM <b>getElementById("myCanvas");</b>.</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">let </span><span class="js-name-text">myCanvas1</span> = <span class="js-name-text">document</span>.<span class="js-method-text">getElementById</span>(<span class="js-string-text">"canvas-1"</span>);
+        </div>
+
+        <p>Lo tercero que necesitamos es un objeto dibujable para el canvas. Para esto se usa la función <b>getContext("2d");</b> que es el contexto de dibujo del elemento canvas y posee propiedades y métodos para dibujar sobre el mismo. Con este paso completado ya estaremos en condiciones de crear gráficos</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">let </span><span class="js-name-text">myContext1</span> = <span class="js-name-text">myCanvas1</span>.<span class="js-method-text">getContext</span>(<span class="js-string-text">"2d"</span>);
+        </div>
+
+        <p class="note"><b>NOTA:</b> Para verificar que el navegador soporte canvas, el script puede ejecutar la función anterior de la siguiente forma:</p>
+
+        <div class="code-block">
+            <span class="js-declare-text">let </span><span class="js-name-text">myCanvas1</span> = <span class="js-name-text">document</span>.<span class="js-method-text">getElementById</span>(<span class="js-name-text">canvas-1</span>);<br><br>
+
+            <span class="js-conditional-text">if</span> (<span class="js-name-text">myCanvas1</span>.<span class="js-method-text">getContext</span>){<br>
+            <span class="tabulation1 js-comment-text">// Código del dibujo aquí</span><br>}
+            <span class="js-conditional-text">else</span> {<br>
+            <span class="tabulation1 js-comment-text">// Código si no es soportado aquí</span><br>}
+
+        </div>
+
+        <p>El tercer y último paso consiste en dibujar. Para conocer las herramientas de dibujo que ofrece <b>canvas</b> en secciones posteriores se prueban todas ellas. Con este pequeño ejemplo ilustrativo dibujamos un cuadrado rojo en el centro del canvas.</p>
+        
+        <div>
+            <input type="radio" name="tab-1" id="html-tab-1" class="radio-tab" checked>
+            <label for="html-tab-1" class="radio-tab">HTML</label>
+    
+            <input type="radio" name="tab-1" id="js-tab-1" class="radio-tab">
+            <label for="js-tab-1" class="radio-tab">JavaScript</label>    
+    
+            <div class="code-block-tab html-tab-1">
+                &lt;<span class="html-label-text">canvas</span><span class="html-attribute-text"> id</span>=<span class="html-variable-text">"canvas-id"</span><span class="html-attribute-text"> height</span>=<span class="html-variable-text">"200px"</span> <span class="html-attribute-text"> width</span>=<span class="html-variable-text">"200px"</span> <span class="html-attribute-text"> style</span>=<span class="html-variable-text">"border: thin black solid"</span>&gt;
+            </div>
+
+            <div class="code-block-tab js-tab-1">
+                <span class="js-declare-text">let </span><span class="js-name-text">myCanvas</span> = <span class="js-name-text">document</span>.<span class="js-method-text">getElementById</span>(<span class="js-string-text">"canvas-id"</span>);<br>
+                <span class="js-declare-text">let </span><span class="js-name-text">myContext</span> = <span class="js-name-text">myCanvas</span>.<span class="js-method-text">getContext</span>(<span class="js-string-text">"2d"</span>);<br>
+                <span class="js-name-text">myContext</span>.<span class="js-method-text">fillStyle</span> = <span class="js-string-text">"#FF0000"</span>; <span class="js-comment-text"> // Establecemos un color, gradiente o patrón de colores de CSS</span><br>
+                <span class="js-name-text">myContext</span>.<span class="js-method-text">fillRect</span>(<span class="js-value-text">50</span>, <span class="js-value-text">50</span>, <span class="js-value-text">100</span>, <span class="js-value-text">100</span>); <span class="js-comment-text"> // Establecemos la posición de origen, el ancho y el alto del rectangulo.</span><br>
+            </div>
+        </div>
+        <br>
+
+        <canvas id="canvas-id" width="200px" height="200px" style="border: solid thin black;"></canvas>
+
+        <p class="note"><b>NOTA</b>: Los canvas estan compuestos por una grilla de dos dimensiones cuyo origen de coordenadas (0,0) se encuentra siempre arriba a la izquierda.</p>
+        
+        <hr>
+    </div>
+    <div> <!--Rectángulos-->
+        <h2 id="4">Rectángulos</h2>
+
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">Rectángulos</div>
+            <div class="button-panel">
+                <p><b>Métodos</b></p>
+                <button id="item-button-0" class="item-button"><b>rect(x0, y0, width, height);</b> <span class="js-comment-text">// Crea un rectángulo hueco</span></button><br>
+                <button id="item-button-1" class="item-button"><b>fillRect(x0, y0, width, height);</b> <span class="js-comment-text">// Dibuja un rectángulo relleno</span></button><br>      
+                <button id="item-button-2" class="item-button"><b>strokeRect(x0, y0, width, height);</b> <span class="js-comment-text">// Dibuja un rectángulo hueco</span></button><br>            
+                <button id="item-button-3" class="item-button"><b>clearRect(x0, y0, width, height);</b> <span class="js-comment-text">// Borra un fragmento rectángular del canvas</span></button><br>   
+
+            </div>
+            <div id="view-panel-0" class="view-panel">
+                <canvas id="canvas-0" height="300px" width="500px" style="border:thin black solid;"></canvas>
+            </div>
+            <div id="description-panel-0" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+            <div id="code-panel-0" class="code-panel" contenteditable></div>
+         </div>
+        <hr>
+    </div>
+    <div> <!--Texto-->
+        <h2 id="5">Texto</h2>
+
+        <div class="iteractive-panel"><!--Panel interactivo-->
+            <div class="title-panel">Texto</div>
+            <div class="button-panel">
+                <p><b>Propiedades</b></p>
+                <button id="item-button-4" class="item-button"><b>font >> (font-style)</b> <span class="js-comment-text"></span></button><br>
+                <button id="item-button-5" class="item-button"><b>font >> (font-variant)</b> <span class="js-comment-text"></span></button><br>
+                <button id="item-button-6" class="item-button"><b>font >> (font-weight)</b> <span class="js-comment-text"></span></button><br>
+                <button id="item-button-7" class="item-button"><b>font >> (font-size)</b> <span class="js-comment-text"></span></button><br>
+                <button id="item-button-8" class="item-button"><b>font >> (font-family)</b> <span class="js-comment-text"></span></button><br><br>
+                <!--<button id="item-button-9" class="item-button"><b>font<span class="js-comment-text"> // Configuraciones por defecto</span></button><br>-->
+
+
+
+                <p><b>Métodos</b></p>
     
 
+            </div>
+            <div id="view-panel-1" class="view-panel">
+                <canvas id="canvas-1" height="300px" width="500px" style="border:thin black solid;"></canvas>
+            </div>
+            <div id="description-panel-1" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+            <div id="code-panel-1" class="code-panel" contenteditable></div>
+         </div>
+        <hr>
+    </div>
+
+
+
+    <div> <!--Colores, estilos y sombras-->
+<!--         <h2 id="5">Colores, estilos y sombras</h2>
+        <p>Para los siguientes ejemplos las dimensiones del canvas son de 300px de alto y 600px de ancho.</p> -->
+<!--         <p><b>fillStyle</b>: Inicializa o retorna el color, gradiente o patrón usado para llenar el dibujo.</p>
+ -->
+        <!-- <img id="img1" src="../../Image/Icono_Microcontrolador.png" alt="" style="display:none;">
+        <div class="iteractive-panel"> --><!--Panel interactivo-->
+<!--             <div class="title-panel">Colores, estilos y sombras</div>
+            <div class="button-panel">
+                <p>Metodos</p>
+                <button id="item-button-0" class="item-button"><b>createLinearGradient(x0, y0, x1, y1);</b> <span class="js-comment-text">// Gradiente lineal horizontal</span><br>
+                <button id="item-button-1" class="item-button"><b>createLinearGradient(x0, y0, x1, y1);</b> <span class="js-comment-text">// Gradiente lineal vertical</span><br>
+                <button id="item-button-2" class="item-button"><b>createLinearGradient(x0, y0, x1, y1);</b> <span class="js-comment-text">// Gradiente lineal a 45 grados</span><br>
+                <button id="item-button-3" class="item-button"><b>createLinearGradient(x0, y0, x1, y1);</b> <span class="js-comment-text">// Gradiente lineal con corte abrupto</span><br>
+                <button id="item-button-4" class="item-button"><b>createRadialGradient(x0, y0, r0, x1, y1, r1);</b> <span class="js-comment-text">// Gradiente radial concéntrico</span><br>
+                <button id="item-button-6" class="item-button"><b>createRadialGradient(x0, y0, r0, x1, y1, r1);</b> <span class="js-comment-text">// Gradiente radial con radios invertidos</span><br>
+                <button id="item-button-5" class="item-button"><b>createRadialGradient(x0, y0, r0, x1, y1, r1);</b> <span class="js-comment-text">// Gradiente radial no concéntricos</span><br>
+                <button id="item-button-7" class="item-button"><b>createRadialGradient(x0, y0, r0, x1, y1, r1);</b> <span class="js-comment-text">// Gradiente radial con corte abrupto</span><br>
+                <button id="item-button-8" class="item-button"><b>createPattern(image, no-repeat);</b> <span class="js-comment-text">// Patrón sin repeticiones</span><br>
+            </div>
+            <div id="view-panel-0" class="view-panel">
+                <canvas id="canvas-1" height="300px" width="500px" style="border:thin black solid;"></canvas>
+            </div>
+            <div id="description-panel-0" class="description-panel" contenteditable>Elige una opción ¯\_(ツ)_/¯</div>
+            <div id="code-panel-0" class="code-panel" contenteditable></div>
+         </div>
+        <hr> -->
+    </div>
+
     
+
+    <script src="../JS/html-canvas.js"></script>
     <script> includeHTML(); </script>
 
 

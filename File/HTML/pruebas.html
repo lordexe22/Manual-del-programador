@@ -1,162 +1,37 @@
-<!-- LA IDEA DE ESTE DOCUMENTO ES PROBAR LOS ESTILOS QUE SE QUIEREN INCORPORAR A EL ARCHIVO DE ESTILOS DE CSS-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/pruebas.css">
-    <title>Document</title>
+    <script src="../JS/reciclarHTML.js"></script><!--Script para reciclar código HTML-->
+
+    <title>Pruebas</title>
 </head>
 <body>
-    <h1 id="titulo">Archivo de pruebas</h1>
-    <hr>
-    <div> <!--Bloque de código-->
-        <h2>Bloque de código</h2>    
-        <div class="code-block"> class="code-block"</div>
-        <br><hr>
-    </div>
-    <div> <!--Bloque de código en tabs (HTML/CSS/JS)-->
-        <h2>Bloque de código en tabs (HTML/CSS/JS)</h2>
+    <div w3-include-html="header.html"></div> <!--Reciclamos el header de header.html-->
+    <div w3-include-html="nav-html.html"></div> <!--Reciclamos el nav de nav-html.html-->
 
-        <input type="radio" name="tab-1" id="html-tab-1" class="radio-tab" checked>
-        <label for="html-tab-1" class="radio-tab">HTML</label>
-
-        <input type="radio" name="tab-1" id="css-tab-1" class="radio-tab">
-        <label for="css-tab-1" class="radio-tab">CSS</label>
-
-        <input type="radio" name="tab-1" id="js-tab-1" class="radio-tab">
-        <label for="js-tab-1" class="radio-tab">Java Script</label>
-
-
-        <div class="code-block-tab html-tab-1">Código HTML</div>
-        <div class="code-block-tab css-tab-1">Código CSS</div>
-        <div class="code-block-tab js-tab-1">Código Java Script</div>
-
-        <br><hr>    
-    </div>
-    <div> <!--Texto tabulado-->
-        <h2>Texto tabulado</h2>
-        <div class="tabulation0">class="tabulation0"</div>
-        <div class="tabulation1">class="tabulation1"</div>
-        <div class="tabulation2">class="tabulation2"</div>
-        <div class="tabulation3">class="tabulation3"</div>
-        <div class="tabulation4">class="tabulation4"</div>
-        <div class="tabulation5">class="tabulation5"</div>
-        <div class="tabulation6">class="tabulation6"</div>
-        <div class="tabulation7">class="tabulation7"</div>
-        <div class="tabulation8">class="tabulation8"</div>
-        <br><hr>    
-    </div>
-    <div> <!--Texto en código HTML-->
-        <h2>Texto en código HTML</h2>
-        <div class="code-block">
-            <span class="html-comment-text">comment</span><br>
-            <span class="html-label-text">label</span><br>
-            <span class="html-attribute-text">attribute</span><br>
-            <span class="html-variable-text">variable</span><br>
-            <span class="html-value-text">value</span><br>
-            
-            <span class="tabulation0 html-comment-text">&lt;!-- Soy un comentario --&gt;</span><br><span class="tabulation0">&lt;</span><span class="html-label-text">div</span><span class="html-attribute-text"> class</span><span>=</span><span class="html-variable-text">"html-value-text"</span><span>&gt;</span><br><span class="tabulation1">&lt;</span><span class="html-label-text">p</span><span>&gt;Parrafo</span><span>&lt;/</span><span class="html-label-text">p</span><span>&gt;</span><br><span>&lt;/</span><span class="html-label-text">div</span><span>&gt;</span>
-            </p>
+    <div class="grid-container-iteractive-panel">
+        <div class="grid-item-theme-panel">
+            <select name="group-1" class="grid-theme-selector" onchange="actualizarOpciones(this)">
+                <option value="clear"><b>Seleccione una propiedad</b></option>
+                <option value="theme-1">Tema 1</option>
+                <option value="theme-2">Tema 2</option>
+            </select>          
         </div>
-        <br><hr>
+
+        <div class="grid-item-code-panel" id="code-panel-1">Código</div>
+        <div class="grid-item-description-panel" id="description-panel-1">Descripción</div>
+        <div class="grid-item-view-panel" id="view-panel-1">Pantalla</div>
+        <div class="grid-item-options-panel" id="options-panel-1"></div>
     </div>
-    <div> <!--Texto en código CSS-->
-        <h2>Texto en código CSS</h2>
-        <div class="code-block">
-            <span class="css-comment-text">comment</span><br>
-            <span class="css-body-text">body</span><br>
-            <span class="css-attribute-text">attribute</span><br>
-            <span class="css-variable-text">variable</span><br>
-            <span class="css-value-text">value</span><br>
-            <span class="css-hooks-text">hooks</span><br>
-            
-            <span class="tabulation0 css-comment-text">/* Soy un comentario */</span><br>
-            <span class="css-body-text">.code-block</span><span> &gt; </span><span class="css-body-text">.css-variable-text</span><span class="css-hooks-text"> {</span><br><span class="tabulation1 css-attribute-text">color</span><span>:</span><span class="css-variable-text">firebrick</span><span>;</span><br><span class="tabulation1 css-attribute-text">font-size</span><span>:</span><span class="css-value-text">1em</span><span>;</span><br><span class="css-hooks-text">}</span><br>
-        </div>
-        <br><hr>    
-    </div>
-    <div> <!--Texto en código JSS-->
-        <h2>Texto en código JS</h2>
-        <div class="code-block">
-            <span class="js-comment-text">comment</span><br>
-            <span class="js-declare-text">declare</span><br>
-            <span class="js-method-text">method</span><br>
-            <span class="js-name-text">name</span><br>
-            <span class="js-variable-text">variable</span><br>
-            <span class="js-value-text">value</span><br>
-            <span class="js-conditional-text">conditionals</span><br>
-            <span class="js-string-text">string</span><br>
-            <span class="js-hooks-text">hooks</span><br>
+ 
 
-            
-            <span class="tabulation0 css-comment-text">/* Soy un comentario */</span><br>
-            <span class="tabulation0 js-declare-text">function </span><span class="js-name-text">myFunction</span><span class="js-hooks-text">() {</span><br>
-            <span class="tabulation1 js-declare-text">var </span><span class="js-name-text">num1</span><span> = </span><span class="js-variable-text">document</span><span>.</span><span class="js-method-text">getElementsByClassName</span><span class="js-hooks-text">(</span><span class="js-string-text">"myClass"</span><span class="js-hooks-text">)</span><span>;</span><br>
-            <span class="tabulation1 js-conditional-text">for</span><span class="js-hooks-text">(</span><span class="js-declare-text">var</span><span class="js-name-text"> i</span><span> = </span><span class="js-value-text">0</span><span>; </span><span class="js-name-text">i</span><span> &lt; </span><span class="js-name-text">x</span><span>.</span><span class="js-method-text">length</span><span>; </span><span class="js-name-text">i</span><span>++</span><span class="js-hooks-text">) {</span><br>
-            <span class="tabulation2 js-name-text">x</span><span class="js-hooks-text">[</span><span class="js-name-text">i</span><span class="js-hooks-text">]</span><span>.</span><span class="js-method-text">style</span><span>.</span><span class="js-method-text">display</span><span> = </span><span class="js-string-text">"none"</span><span>;</span><br>
-            <span class="tabulation1 js-hooks-text">}</span><br>
-            <span class="tabulation0 js-hooks-text">}</span><br>
-
-        </div>
-        <br><hr>    
-    </div>
-    <div>
-        <h2>Acordeon</h2>
-        <div>
-            <details id="ac1">
-                1 <br>
-                2 <br>
-            </details>
-        </div>
-    </div>
-
-    <div> <!--Panel de navegación-->
-        <h2>Panel de navegación (en el lateral izquierdo)</h2>
-        <nav>
-            <div>Linea 1</div>
-            <div>Linea 2</div>
-        </nav>
-        <hr>
-    </div>
-
-    <div><!--Panel de cabecera-->
-        <h2>Cabecera</h2>
-        <header>
-            <a href="html.html"><img class="img-html" src="../../Image/Logo-HTML.png" alt=""></a>
-            <a href="css.html"><img class="img-css" src="../../Image/Logo-CSS.png" alt=""></a>
-            <a href="js.html"><img class="img-js" src="../../Image/Logo-JS.png" alt=""></a>
-        </header>
-        <hr>
-    </div>
-
-    <div class="iteractive-panel"><!--Panel interactivo-->
-       <div class="title-panel">title-panel</div>
-       <div class="button-panel">
-            <button id="item-button-0" class="item-button">btn0</button><br>
-            <button id="item-button-1" class="item-button">btn1</button><br>
-            <button id="item-button-2" class="item-button">btn2</button><br>
-            <button id="item-button-3" class="item-button">btn3</button><br>
-            <button id="item-button-4" class="item-button">btn4</button><br>
-            <button id="item-button-5" class="item-button">btn5</button><br>
-            <button id="item-button-6" class="item-button">btn6</button><br>
-            <button id="item-button-7" class="item-button">btn7</button><br>
-            <button id="item-button-8" class="item-button">btn8</button><br>
-            <button id="item-button-9" class="item-button">btn9</button><br>
-            <button id="item-button-10" class="item-button">btn10</button><br>
-            <button id="item-button-11" class="item-button">btn11</button><br>
-            <button id="item-button-12" class="item-button">btn12</button><br>
-
-        </div>
-       <div class="view-panel">view-panel</div>
-       <div class="code-panel">code-panel</div>
-    </div>
-
-<br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> <br><br><br><br> 
-
-
+    <script src="../JS/pruebas.js"></script>
+    <script> includeHTML(); </script>
 
 </body>
 </html>
